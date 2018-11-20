@@ -1,0 +1,27 @@
+{{ $pageid := .Params.pageid }}
+{{ $siteUrl := .Site.BaseURL }}
+
+<!doctype html>
+<html lang="en">
+  {{ partial "head.html" . }}
+  <body class="in-{{ .Section | urlize }}">
+
+    <header class="site-header">
+      <div class="container">
+        {{ block "menu-main" . }}
+          {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+        {{ end }}
+      </div>
+    </header>
+
+    <main class="site-main">
+        <div class="container">
+          Blank Setup
+        </div>
+      {{ block "content" . }}{{ end }}
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html> 
