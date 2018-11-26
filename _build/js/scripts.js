@@ -1,6 +1,6 @@
-var lexkit = function () {
+// @include lib/_includes.js
 
-  console.log("Hello from Lexkit");
+var lexkit = function () {
 
   // Framework Variables
   var _g,
