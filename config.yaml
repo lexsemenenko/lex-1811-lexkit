@@ -81,9 +81,25 @@ menu:
       name: "Playground"
       weight: 1
       url: javascript:;
-      identifier: "playground"
+      identifier: "Playground"
     -
       name: "Snippets"
       weight: 1
       url: javascript:;
       identifier: "home"
+
+    # Playground Children
+    # =====================================
+    -
+      name: "JS"
+      identifier: "playground_js"
+      url: javascript:;
+      parent: "Playground"
+
+    # JS Children
+    # -------------------------------------
+    -
+      name: "Objects"
+      identifier: "playground_js_objects"
+      url: javascript:;
+      parent: "playground_js"

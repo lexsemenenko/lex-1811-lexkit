@@ -1,5 +1,9 @@
 
-// Base constructor function
+// =============================================================================
+// Prototype Inheritance ES5
+// =============================================================================
+
+// Base Constructor
 // =============================================================================
 
 function Alert(title) {
@@ -19,7 +23,7 @@ Alert.prototype.toString = function () {
 }
 
 
-// Success Alert
+// Constructor that inherits from Base
 // =============================================================================
 
 //                  This class would inherit from base class
