@@ -15,13 +15,13 @@
     </header>
 
     <main class="site-main">
-        <div class="container">
-          Blank Setup
-        </div>
-      {{ block "content" . }}{{ end }}
+      <div class="container">
+        {{ block "content" . }}{{ end }}
+      </div>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
+    {{ block "scripts-inline" . }}{{ end }}
   </body>
 </html> 

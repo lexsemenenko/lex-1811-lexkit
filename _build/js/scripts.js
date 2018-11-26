@@ -1,8 +1,10 @@
-var lexkit = function(){
+var lexkit = function () {
+
+  console.log("Hello from Lexkit");
 
   // Framework Variables
   var _g,
-      _system = {};
+    _system = {};
 
   // @include framework/_includes.js
 
@@ -18,13 +20,13 @@ var lexkit = function(){
   // @include site-specific/site-specific.js
 
   function runModules() {
-    _modulesAddedArray.forEach(function(item) { 
+    _modulesAddedArray.forEach(function (item) {
       // Run init function of a module, and pasd itself (module instance) to the 
       // init function, so we can have module prototypes inside the function
       item.moduleObject.init.call(item);
     });
   }
-  
+
   // [CHECK] Run Modules on Temporary here, should be in bundles
   $(document).on("on:Ready", runModules);
   $(document).on("on:ResizeEnd", runModules);
@@ -32,6 +34,6 @@ var lexkit = function(){
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   lexkit();
 });
