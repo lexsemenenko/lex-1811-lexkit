@@ -12,19 +12,18 @@ uglyURLs: true # make simple HTML files not directories
 
 #for Local
 # baseURL: ""
-# RelativeURLs: true # rewrite to relative to root of content 
+# RelativeURLs: true # rewrite to relative to root of content
 # canonifyURLs: false # switch to true to prefix URLs with baseURL
 
 #For Package
 baseURL: "/"
-RelativeURLs: false # rewrite to relative to root of content 
+RelativeURLs: false # rewrite to relative to root of content
 canonifyURLs: true # switch to true to prefix URLs with baseURL
 
 #=====================================
 
-
 # Defualt Outputs
-disableKinds: ['RSS', '404', 'sitemap', 'robotsTXT']
+disableKinds: ["RSS", "404", "sitemap", "robotsTXT"]
 
 # Content Settings
 MetaDataFormat: "yaml"
@@ -40,14 +39,14 @@ blackfriday:
   angledQuotes: true # Actual quote marks
   taskLists: false
   hrefTargetBlank: false # Only works with site having relative URLs
-  nofollowLinks: false  # Only works with site having relative URLs
+  nofollowLinks: false # Only works with site having relative URLs
   latexDashes: true # Deals with em & en dashes working correctly
   noreferrerLinks: false # Only works with site having relative URLs
   extensions:
   extensionsmask: ["autoHeaderIds"] # Removes header IDs that are added automatically. Required for TOC to work
 
 # Global Variables
-Params: 
+Params:
   package: false
   path:
     images: "/images/"
@@ -58,48 +57,44 @@ Params:
 # =============================================================================
 
 menu:
-  
   # Main
   # =============================================================================
 
   main:
-
     # Level One
-    # =====================================  
-    
-    -
-      name: "Home"
+    # =====================================
+
+    - name: "Home"
       weight: 1
       url: "/"
       identifier: "home"
-    -
-      name: "Demo"
+    - name: "Demo"
       weight: 1
       url: javascript:;
       identifier: "demo"
-    -
-      name: "Playground"
+    - name: "Playground"
       weight: 1
       url: javascript:;
       identifier: "Playground"
-    -
-      name: "Snippets"
+    - name: "Snippets"
       weight: 1
       url: javascript:;
       identifier: "home"
 
     # Playground Children
     # =====================================
-    -
-      name: "JS"
+    - name: "JS"
       identifier: "playground_js"
       url: javascript:;
       parent: "Playground"
 
     # JS Children
     # -------------------------------------
-    -
-      name: "Objects"
+    - name: "Objects"
       identifier: "playground_js_objects"
+      url: javascript:;
+      parent: "playground_js"
+    - name: "Types"
+      identifier: "playground_js_types"
       url: javascript:;
       parent: "playground_js"
