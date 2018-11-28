@@ -98,3 +98,11 @@ menu:
       identifier: "playground_js_types"
       url: javascript:;
       parent: "playground_js"
+    - name: "Functions"
+      identifier: "playground_js_functions"
+      url: javascript:;
+      parent: "playground_js"
+    - name: "This"
+      identifier: "playground_js_this"
+      url: javascript:;
+      parent: "playground_js"
