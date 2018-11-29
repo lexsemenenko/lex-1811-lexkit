@@ -2,7 +2,7 @@
 {{ $loopCount := .loopCount -}}
 {{ $var := .currentNode.Scratch }}
 
-{{ $classname := default "nav" .classname -}}
+{{ $classname := default "menu-main" .classname -}}
 {{ $item := print $classname "__" "item" -}}
 {{ $link := print $classname "__" "link" -}}
 {{ $withChildren := default true .children }}
