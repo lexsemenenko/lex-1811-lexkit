@@ -1,3 +1,26 @@
+<!-- 
+================================================================================
+Menu - Data attribute 
+================================================================================
+
+Version:            1.0.0
+
+Description:        This version of the menu will output the full menu and all
+                    children. Menu meta into a data attribute:
+                    - active
+                    - hasChildren
+                    - hasActive
+                    - level
+  
+Params:
+- menu              array     Menu array to run the template on
+- children          boolean   Whether or not to include children
+- classname         string    Base classname for menu
+- attribute         string    Base classname for menu
+- loopcount         integer   Number to start the depth of the loop at (this is superficial for styling classname purposes) 
+
+-->
+
 {{ $currentNode := .currentNode -}}
 {{ $loopCount := .loopCount -}}
 {{ $var := .currentNode.Scratch }}
@@ -38,7 +61,7 @@
           {{ $var.SetInMap  "menuData"  "classname" $classname }}
           {{ $var.SetInMap  "menuData"  "attribute" $attr }}
 
-          {{ partial "menu/menu--main.html" ($var.Get "menuData") -}}
+          {{ partial "menu.html" ($var.Get "menuData") -}}
         {{ end -}}
       </li>
   {{end}} 

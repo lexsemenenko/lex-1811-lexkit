@@ -1,0 +1,24 @@
+<!-- 
+
+Version:            1.0.0
+
+ -->
+
+{{ $currentNode := . }}
+
+
+<ul class="menu">
+
+  <!-- Start menu loop -->
+  {{ range .Site.Menus.main }}
+
+    <li class="leaf {{ if $currentNode.IsMenuCurrent "main" . }} active{{end}}">
+
+      <a href="{{ .URL | safeURL }}" class="link {{ if $currentNode.IsMenuCurrent "main" . }} active{{end}}">{{ .Name }}</a>
+
+    </li>
+
+  {{end}} 
+  <!-- End Loop -->
+
+</ul>
