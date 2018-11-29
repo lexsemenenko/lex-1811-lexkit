@@ -106,3 +106,7 @@ menu:
       identifier: "playground_js_this"
       url: javascript:;
       parent: "playground_js"
+    - name: "Constructor & Prototypes"
+      identifier: "playground_js_constructor_prototypes"
+      url: javascript:;
+      parent: "playground_js"
