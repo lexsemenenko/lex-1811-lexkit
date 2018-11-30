@@ -1,4 +1,10 @@
+// =============================================================================
+// Collapsible
+// =============================================================================  
+
 // Create Base Collapsible Class
+// =============================================================================
+
 function Collapsible(title) {
   this.title = title;
 }
@@ -7,6 +13,10 @@ function Collapsible(title) {
 Collapsible.prototype.showTitle = function () {
   console.log(this.title);
 }
+
+
+// Subclass: Tabs
+// =============================================================================
 
 // Create Collapsible Subclass that inherits base properties
 function CollapsibleTabs(title) {
@@ -24,7 +34,29 @@ CollapsibleTabs.prototype = Object.create(Collapsible.prototype);
 CollapsibleTabs.prototype.constructor = CollapsibleTabs;
 
 
+// Subclass: Accordions
+// =============================================================================
+
+function CollapsibleAccordions(title) {
+  Collapsible.call(this, title);
+  this.type = "Some Accordions Specific Property";
+}
+CollapsibleAccordions.prototype = Object.create(Collapsible.prototype);
+CollapsibleAccordions.prototype.constructor = CollapsibleAccordions;
+
+// Override Base Method on a subclass
+CollapsibleAccordions.prototype.showTitle = function () {
+  console.log(this.title, "Function Modified");
+}
+
+// Run Constructors
+// =============================================================================
+
 // Acutally Create a Tabs Instance
 var collapsibleTabs = new CollapsibleTabs('Module: Tabs');
 // console.log(collapsibleTabs);
-// collapsibleTabs.showTitle();
+collapsibleTabs.showTitle();
+
+var collapsibleAccordions = new CollapsibleAccordions('Module: Accordions');
+
+collapsibleAccordions.showTitle();
