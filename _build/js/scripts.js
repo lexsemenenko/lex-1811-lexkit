@@ -6,13 +6,19 @@ var lexkit = function () {
   var _g,
     _system = {};
 
-  // @include framework/_includes.js
+  // @include framework/system.js
+  // @include framework/bundles.js
+  // @include framework/events.js
+  // @include framework/classes.js
+  // @include framework/functions.js
+  // @include framework/modules.js
 
   // Assignments
   _g = new _Base();
   _g.system = _system;
 
   // Import Modules
+  // @include modules/module-collapsible.js
   // @include modules/module-test.js
 
   // Site Specific
