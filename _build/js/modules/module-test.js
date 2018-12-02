@@ -1,30 +1,29 @@
 
 var tabs = new _Module({
-  name: "Tabs",
+  _name: "Tabs",
   event: ["on:ready", "on:resize"],
-  init: function() {
+  _init: function () {
     var module = this;
-    // console.log(module.getModuleName() + " module ran");
+    console.log("module ran:", module.getModuleName());
   }
 });
 
 (new _Module({
-  name: "Equalheight",
+  _name: "Equalheight",
   event: ["on:resize"],
-  init: function() {
+  _init: function () {
     var module = this;
-    // console.log(module.getModuleName() + " module ran");
+    console.log("module ran:", module.getModuleName());
   }
 }));
 
 
 (new _Module({
-  name: "Body Color",
+  _name: "Body Color",
   event: ["on:resize"],
-  init: function() {
+  _init: function () {
     var module = this;
-    // console.log(module.getModuleName() + " module ran");
-
+    console.log("module ran:", module.getModuleName());
     $("body").css("background-color", "#f1f1f1");
   }
 }));

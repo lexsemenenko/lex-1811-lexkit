@@ -11,7 +11,7 @@ function Collapsible(title) {
 
 // Create Base Methods for Collapsible
 Collapsible.prototype.showTitle = function () {
-  console.log(this.title);
+  // console.log(this.title);
 }
 
 
@@ -46,7 +46,7 @@ CollapsibleAccordions.prototype.constructor = CollapsibleAccordions;
 
 // Override Base Method on a subclass
 CollapsibleAccordions.prototype.showTitle = function () {
-  console.log(this.title, "Function Modified");
+  // console.log(this.title, "Function Modified");
 }
 
 // Run Constructors

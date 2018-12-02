@@ -4,14 +4,14 @@
 // on:Ready
 // =====================================  
 
-$( document ).ready(function(){
+$(document).ready(function (event) {
   $.event.trigger("on:Ready");
 });
 
 // on:Resize
 // =====================================  
 
-$( window ).on('resize', function(){
+$(window).on('resize', function (event) {
   $.event.trigger("on:Resize");
 });
 
@@ -20,14 +20,14 @@ $( window ).on('resize', function(){
 
 (function () {
   var rtime,
-      timeout = false,
-      delta = 200;
+    timeout = false,
+    delta = 200;
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     rtime = new Date();
     if (timeout === false) {
-        timeout = true;
-        setTimeout(resizeEnd, delta);
+      timeout = true;
+      setTimeout(resizeEnd, delta);
     }
   });
 
@@ -37,6 +37,6 @@ $( window ).on('resize', function(){
     } else {
       timeout = false;
       $.event.trigger("on:ResizeEnd");
-    }               
+    }
   }
 })();
