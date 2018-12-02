@@ -94,6 +94,10 @@ menu:
       identifier: "playground_js_objects"
       url: javascript:;
       parent: "playground_js"
+    - name: "Object Methods"
+      identifier: "playground_js_object_methods"
+      url: javascript:;
+      parent: "playground_js"
     - name: "Types"
       identifier: "playground_js_types"
       url: javascript:;
