@@ -114,3 +114,11 @@ menu:
       identifier: "playground_js_constructor_prototypes"
       url: javascript:;
       parent: "playground_js"
+    - name: "Modules"
+      identifier: "playground_js_modules"
+      url: javascript:;
+      parent: "playground_js"
+    - name: "Loops"
+      identifier: "playground_js_loops"
+      url: javascript:;
+      parent: "playground_js"
