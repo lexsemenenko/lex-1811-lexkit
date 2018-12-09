@@ -23,7 +23,7 @@ canonifyURLs: true # switch to true to prefix URLs with baseURL
 #=====================================
 
 # Defualt Outputs
-disableKinds: ["RSS", "404", "sitemap", "robotsTXT"]
+disableKinds: ["RSS", "404", "sitemap", "robotsTXT","taxonomy", "taxonomyTerm"]
 
 # Content Settings
 MetaDataFormat: "yaml"
