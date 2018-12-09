@@ -1,13 +1,3 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Site Build
-public/
-
-# Dependency directories
 node_modules/
-
-# Junk
-.DS_Store
+dist/
+site/data/webpack.json
