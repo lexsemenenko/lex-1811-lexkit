@@ -122,3 +122,7 @@ menu:
       identifier: "playground_js_loops"
       url: javascript:;
       parent: "playground_js"
+    - name: "ES6 Modules"
+      identifier: "playground_js_es6_modules"
+      url: javascript:;
+      parent: "playground_js"
