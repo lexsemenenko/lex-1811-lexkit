@@ -6,7 +6,7 @@ log: false
 # logFile: 'hugo-debug.log'
 verbose: false
 verboseLog: false
-uglyURLs: true # make simple HTML files not directories
+uglyURLs: false # make simple HTML files not directories
 
 #=====================================
 
@@ -75,11 +75,12 @@ menu:
     - name: "Playground"
       weight: 1
       url: javascript:;
-      identifier: "Playground"
+      identifier: "playground"
     - name: "Snippets"
       weight: 1
       url: javascript:;
       identifier: "home"
+
 
     # Playground Children
     # =====================================
