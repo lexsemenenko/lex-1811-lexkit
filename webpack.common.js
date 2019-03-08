@@ -33,10 +33,11 @@ module.exports = {
         test: /\.(le|c)ss$/,
         exclude: /node_modules/,
         use: [
-          "style-loader",
+          "style-loader",     // creates style nodes from JS strings
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "less-loader"
+          "css-loader",       // Second, translates CSS into CommonJS
+          "postcss-loader",
+          "less-loader"       // First,compiles Less to CSS.
         ]
       }
     ]
@@ -44,8 +45,7 @@ module.exports = {
 
   plugins: [
     new webpack.ProvidePlugin({
-      fetch:
-        "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
+      fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch"
     }),
 
     new AssetsPlugin({
