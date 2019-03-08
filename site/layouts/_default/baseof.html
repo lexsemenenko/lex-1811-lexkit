@@ -8,14 +8,16 @@
 
     <header class="site-header">
       <div class="container">
-        Logo
+        ...
       </div>
     </header>
 
     <div class="layout__wrapper">
       <div class="menu-main layout__menu-main">
         {{ block "menu-main" . }}
-          {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+          {{ if false }}
+            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+          {{ end }}
         {{ end }}
       </div>
 
