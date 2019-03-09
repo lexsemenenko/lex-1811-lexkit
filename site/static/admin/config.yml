@@ -13,4 +13,19 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}"
     fields: # The fields each document in this collection have
-      - { label: "Name", name: "name", widget: "string" }
+      - {label: "Title", name: "title", widget: "string"}
+      - { label: "Company Name", name: "company_name", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Project Date", name: "project_date", widget: "datetime" }
+      - { label: "Intro", name: "intro", widget: "markdown", required: false }
+      - { label: "Link", name: "link", widget: "markdown", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - label: Project Thumbnail
+        name: project_thumbnail
+        widget: image
+        required: false
+        options:
+          media_library:
+            config:
+              multiple: true
+              previewStep: false
