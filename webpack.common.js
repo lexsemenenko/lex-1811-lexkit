@@ -3,6 +3,7 @@ const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
+const lessLists = require('less-plugin-lists');
 
 module.exports = {
   entry: {
@@ -33,15 +34,23 @@ module.exports = {
       // index.js file, because this is our entry, or in another file which is imported in index.js
 
       {
-        test: /\.(le|c)ss$/,  // For what files are the loaders
+        test: /\.(le|c)ss$/, // For what files are the loaders
         exclude: /node_modules/,
-        use: [                // What Loaders to use from bottom to top
-          "style-loader",     // creates style nodes from JS strings
-          MiniCssExtractPlugin.loader,  // Extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
-          "css-loader",       // Second, translates CSS into CommonJS
-          "postcss-loader",
-          "less-loader"       // First,compiles Less to CSS.
-        ]
+        use: [{ // What Loaders to use from bottom to top
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
+        }, {
+          loader: 'css-loader' // Second, translates CSS into CommonJS
+        }, {
+          loader: 'postcss-loader'
+        }, {
+          loader: 'less-loader', options: {
+            plugins: [
+              new lessLists
+            ]
+          }
+        }]
       }
     ]
   },
@@ -80,3 +89,4 @@ module.exports = {
 // # Loaders        
 //                  A utility to help webpack to compile non-js resource types
 //                  such as, css, assets, etc.
+

@@ -6,17 +6,15 @@
   {{ partial "head.html" . }}
   <body class="in-{{ .Section | urlize }}">
 
-    <header class="site-header">
-      <div class="container">
-        
+    <header class="section site-header">
         {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
-
-        <h2 class="">
+        <a href="/">
           <span class="site-header__logo"></span>
-          <span class="site-header__name">Lex Semenenko</span>
-          <span class="site-header__title">Front-End & Web Developer</span>
-        </h2>
-      </div>
+          <h2>
+            <span class="site-header__name">Lex Semenenko</span>
+            <span class="site-header__title">Front-End & Web Developer</span>
+          </h2>
+        </a>
     </header>
 
     <div class="layout__wrapper">

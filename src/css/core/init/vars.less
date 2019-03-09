@@ -21,12 +21,35 @@ Changes:            1.0.0 | ...
 @t-family-base:               sans-serif;
 
 
+
 // Media Queries
 // =============================================================================
+
+// Assignments (semantic to site)
+@break-primary:               @mobile; // Primary Breakpoint
+@break-primary-up:            @tablet-up; // Above primary breakpoint
+@break-secondary:             @tablet;  
 
 // Breakpoint Variables (descending)
 @screen:  ~"screen";
 @mobile:  ~"screen and (max-width: 480px)";
+@tablet:  ~"screen and (max-width: 768px)";
+@laptop:  ~"screen and (max-width: 1024px)";
+@desktop: ~"screen and (max-width: 1350px)";
+
+// Breakpoint Variables (specific)
+@tablet-only:  ~"screen and (max-width: 768px) and (min-width: 481px)";
+@laptop-only:  ~"screen and (max-width: 1024px) and (min-width: 769px)";
+@desktop-only: ~"screen and (max-width: 1600px) and (min-width: 1025px)";
+
+// Breakpoint Variables (ascending)
+@tablet-up:  ~"screen and (min-width: 481px)";
+@laptop-up:  ~"screen and (min-width: 769px)";
+@desktop-up: ~"screen and (min-width: 1025px)";
+@widescreen-up: ~"screen and (min-width: 1600px)";
+
+@chrome: ~"screen and (-webkit-min-device-pixel-ratio:0)";  // Used to traget CHrome Deesktop browser for small tweaks (ie. icon shift in blocks)
+
 
 
 // Colors
