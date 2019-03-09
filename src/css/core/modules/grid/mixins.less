@@ -1,43 +1,104 @@
 @DG__columns:                 12;
-
+@DG__gutter:                  15px;
+@DG__attr:                    "data-grid";
+@DG__breakpoint:              @tablet-up;
 
 
 #G() {
 
   .create(
-    @columns: @DG__columns
+    @columns:                 @DG__columns,
+    @gutter:                  @DG__gutter,
+    @attr:                    @DG__attr,
+    @breakpoint:              @DG__breakpoint,
   ) {
 
     // Make an object for the grid
     @grid: {
       columns:                @columns;
+      gutter:                 @gutter;
+      columnWidth:            100% / @columns;
+      breakpoint:             @breakpoint;
+      attr:                   @attr;
     };
 
     #G._getVars(@grid);
 
+    // No Breakpoint
+    // =====================================
+
+    // Defaults
+    @{_selectGrid} {
+      
+      .cf;
+
+      // Ensure empty elements still take up space in layout
+      > @{_selectItem} {
+        min-height: 1px; 
+      }
+    }
+
+    // Within Breakpoint
+    // =====================================
+
+    @media @breakpoint {
+      
+      @{_selectGrid} {
+
+        // Defaults
+        display:              flex;
+        flex-flow:            row wrap;
+        align-items:          stretch;
+        margin-left:          -@gutter;
+        margin-right:         -@gutter;
+
+        // Item: Defaults
+        > @{_selectItem} {
+          float:              left; // Fallback
+          padding-left:       @gutter;
+          padding-right:      @gutter;
+        }
+        
+        // Generated props for item
+        #G._widths(@grid);
+
+      };
+    }
+
+
+  
     #G._widths(@grid);
 
   }
-
-  // Generated props for item
   
 
   // Private Mixins
   // =============================================================================
 
-  ._widths(@grid) {
+  ._widths(@grid, @suffix: '') {
+
+    #G._getVars(@grid);
     
-    .for(@i: 1, @n: 12) {
-      .col-@{i} {
-          width: @i * 100% / 12;
+    .for(@i: 1, @n: @columns) {
+      
+      @width:                 @columnWidth * @i;
+      
+      > [@{_attrItem}*="width@{suffix}: @{i}"] {
+        width:                @width;
+        flex-basis:           @width;
+        max-width:            @width;
       }
     }
-
   }
 
   ._getVars(@grid) {
     // Used to expose ruleset to local scope and provide additional vars
+    @columnWidth: @grid[columnWidth];
     @columns: @grid[columns];
+    @_selectGrid: e('[@{attr}*="columns: @{columns}"]');
+    @_attrItem: e('@{attr}-item');
+    @_columns: e('columns: @{columns}');
+    @_selectItem: e('[@{attr}-item]');
   }
 }
 
