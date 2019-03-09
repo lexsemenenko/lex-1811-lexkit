@@ -8,7 +8,12 @@
 
     <header class="site-header">
       <div class="container">
-        ...
+        
+        {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
+
+        <h2 class="site-header__logo">
+          <span class="hide-v">Lex Semenenko</span>
+        </h2>
       </div>
     </header>
 
@@ -29,12 +34,8 @@
     </div>
 
 
-
-    {{ $script := .Site.Data.webpack.main }}
-    {{ with $script.js }}
-      <script src="{{ relURL . }}"></script>
-    {{ end }}
-
+    {{ partial "scripts-footer.html" . }}
+    
     {{/* <!-- {{ blo ck "scripts-inline" . }}{{ end }} --> */}}
   </body>
 </html> 

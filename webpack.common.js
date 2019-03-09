@@ -29,12 +29,15 @@ module.exports = {
         query: { cacheDirectory: true }
       },
 
+      // Webpack will use this loaders for any css files that it finds in the
+      // index.js file, because this is our entry, or in another file which is imported in index.js
+
       {
-        test: /\.(le|c)ss$/,
+        test: /\.(le|c)ss$/,  // For what files are the loaders
         exclude: /node_modules/,
-        use: [
+        use: [                // What Loaders to use from bottom to top
           "style-loader",     // creates style nodes from JS strings
-          MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,  // Extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
           "css-loader",       // Second, translates CSS into CommonJS
           "postcss-loader",
           "less-loader"       // First,compiles Less to CSS.
@@ -59,7 +62,21 @@ module.exports = {
         from: "./src/fonts/",
         to: "fonts/",
         flatten: true
+      },
+      {
+        from: "./src/img/",
+        to: "img/",
+        flatten: true
       }
     ])
   ]
 };
+
+
+// =============================================================================
+// Notes
+// =============================================================================
+
+// # Loaders        
+//                  A utility to help webpack to compile non-js resource types
+//                  such as, css, assets, etc.
