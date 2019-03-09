@@ -11,6 +11,7 @@
     @gutter:                  @DG__gutter,
     @attr:                    @DG__attr,
     @breakpoint:              @DG__breakpoint,
+    @optional:                false
   ) {
 
     // Make an object for the grid
@@ -64,11 +65,42 @@
 
       };
     }
+    // Call optional mixins passed by user
+    & when not (@optional = false) {
+      @optional();
+    }
+  }
 
+  // Function for adding additional breakpoint to grid
+  // Similar to the create() function without defaults or selectors
+  // for items that need to change on breakpoints
+  // This will print:
+  // - Width Selectors
+  // - Offset Selectors
+  // - Rule position changes (if enabled in the create mixin)
+  .breakpoint(
+    @suffix:                  "large",
+    @gutter:                  @DG__gutter,
+    @breakpoint:              @DG__breakpoint
+  ) {
 
-  
-    #G._widths(@grid);
+    // #DG._getVars(@grid);
 
+    @media @breakpoint {
+
+      @{_selectGrid} {
+        margin-left:          -@gutter;
+        margin-right:         -@gutter;
+
+        > @{_selectItem} {
+          padding-left:       @gutter;
+          padding-right:      @gutter;
+        }
+
+        // Generated props
+        #G._widths(@grid, '-@{suffix}');
+      }
+    }
   }
   
 
@@ -101,7 +133,3 @@
     @_selectItem: e('[@{attr}-item]');
   }
 }
-
-#G.create(
-  @columns:                   12
-);
