@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: lexsemenenko/lex-1811-lexkit
+  branch: master
+
+# media_folder: "site/static/img" # Folder where user uploaded files should go
+public_folder: "img"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "project" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Project" # Used in the UI, ie.: "New Post"
+    folder: "content/project" # The path to the folder where the documents are stored
+    extension: "md"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
+    fields: # The fields each document in this collection have
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Company Name", name: "company_name", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Project Date", name: "project_date", widget: "datetime" }
+      - { label: "Intro", name: "intro", widget: "markdown", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - label: Project Thumbnail
+        name: project_thumbnail
+        widget: image
+        required: false
+        options:
+          media_library:
+            config:
+              multiple: true
+              previewStep: false

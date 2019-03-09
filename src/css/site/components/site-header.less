@@ -1,8 +1,23 @@
 @logo-size-multiplier:                  5;
 
-.site-header__logo {
-  background: url('/img/logo--lex-blue.png');
-  background-size: 100%;
-  width: 423px / @logo-size-multiplier;
-  height: 198px / @logo-size-multiplier;
+.site-header {
+  span {
+    display: block;
+  }
+  &__logo {
+    background: url('/img/logo--lex-blue.png');
+    background-size: 100%;
+    width: 423px / @logo-size-multiplier;
+    height: 198px / @logo-size-multiplier;
+    float: left;
+    margin-right: 0.5em;
+  }
+  &__name {
+    font-weight: bold;
+    .hide-v;
+  }
+  &__title {
+    font-weight: normal;
+    .hide-v;
+  }
 }
