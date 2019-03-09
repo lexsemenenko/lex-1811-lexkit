@@ -1,7 +1,7 @@
 ---
-title: "Combatting Cybercrime"
-company_name: "World Bank"
-date: 2018-11-19T04:13:09.500Z
+layout: project
+title: "Let's Party"
+date: 1999-12-31 11:59:59 -0800
 ---
 
-Body Text
+This is the post body, where I write about our last chance to party before the Y2K bug destroys us all.
