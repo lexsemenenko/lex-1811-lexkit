@@ -2,7 +2,6 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 
-
 media_folder: "src/img/projects" # Folder where user uploaded files should go
 public_folder: "img"
 
@@ -15,9 +14,3 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{slug}}"
     fields: # The fields each document in this collection have
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Company Name", name: "company_name", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Project Date", name: "project_date", widget: "datetime" }
-      - { label: "Intro", name: "intro", widget: "markdown", required: false }
-      - { label: "Link", name: "link", widget: "markdown", required: false }
-      - { label: "Body", name: "body", widget: "markdown", required: false }
