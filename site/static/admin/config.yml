@@ -19,6 +19,7 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Project Date", name: "project_date", widget: "datetime" }
       - { label: "Intro", name: "intro", widget: "markdown", required: false }
+      - { label: "Link", name: "link", widget: "markdown", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - label: Project Thumbnail
         name: project_thumbnail
