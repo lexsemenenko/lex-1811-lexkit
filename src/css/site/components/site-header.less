@@ -5,12 +5,15 @@
     display: block;
   }
   &__logo {
-    background: url('/img/logo--lex-blue.png');
-    background-size: 100%;
+    // background: url('/img/logo--lex-blue.png');
+    // background-size: 100%;
     width: 423px / @logo-size-multiplier;
     height: 198px / @logo-size-multiplier;
     float: left;
     margin-right: 0.5em;
+    svg path {
+      fill: #0da1ec;
+    }
   }
   &__name {
     font-weight: bold;
