@@ -14,13 +14,69 @@ Changes:            1.0.0 | ...
 // Typography
 // =============================================================================
 
+@toggle-rem:                  on;                                               // rem units
+@t-margin-multiplier:         1;                                             // Amount the margin should be altered from the line-height
+
 @t-base:                      15px;
 @t-base-lh:                   1.6em;
 @t-base-color:                @color-black-80;
 
 @t-family-base:               sans-serif;
 
+@t-large-xx:                  39px;
+@t-large-xx-lh:               @t-base-lh;
+@t-large-x:                   25px;
+@t-large-x-lh:                @t-base-lh;
+@t-large:                     21px;
+@t-large-lh:                  @t-base-lh;
+@t-small:                     13px;
+@t-small-lh:                  @t-base-lh;
+@t-small-x:                   11px;
+@t-small-x-lh:                @t-base-lh;
 
+// Extras
+@t-lh-dense:                  1.2em;
+@t-lh-no:                     0.8em;   // When displaying a block and removing the line-height. Adjust per font.
+
+
+// Type Breakpoint Sizes
+// =====================================
+
+// These are used either directly by you or as defualts
+// when using the type mixin with keywords instead of 
+// variables -->  #TYPE.createSize('large'); 
+
+@t-breakpoint:                @break-primary;
+
+@t-break--base:               15px;
+@t-break--base-lh:            1.6em;
+
+@t-break--large-xx:           39px;
+@t-break--large-xx-lh:        @t-base-lh;
+@t-break--large-x:            25px;
+@t-break--large-x-lh:         @t-base-lh;
+@t-break--large:              200px;
+@t-break--large-lh:           @t-base-lh;
+@t-break--small:              10px;
+@t-break--small-lh:           @t-base-lh;
+@t-break--small-x:            11px;
+@t-break--small-x-lh:         @t-base-lh;
+
+// Elements
+// =============================================================================
+
+@border-color:                @color-black-15; // Defualt border color
+@border-light:                1px solid @color-black-15;
+@border-dark:                 1px solid @color-black-60;
+
+
+// Links
+// =============================================================================
+
+@a-color:                               @color-blue;
+@a-color-hover:                         spin(@a-color, 170);
+@a-color-visited:                       purple;
+@a-hover-visted--class-only:            false;   // Do you hover and visited applied to <a> or .links class only
 
 // Media Queries
 // =============================================================================
