@@ -1,10 +1,17 @@
 .doc {
   background-color: white;
   box-shadow: 0 1px 3px 1px rgba(60,64,67,.15);
-  padding: 86px 86px 86px 96px;
-  margin-top: 2em;
-  margin-bottom: 4em;
+  margin-top: 0.6em;
+  margin-bottom: 2em;
   min-height: 1056px;
+  padding: 1em 1em;
+  @media @tablet-up {
+    padding: 43px 4px 43px 47px;
+  }
+  @media @desktop-up {
+    margin-top: 1.6em;
+    padding: 86px 86px 86px 96px;
+  }
 }
 
 @logo-size-multiplier:                  5;
@@ -14,6 +21,7 @@
     display: block;
   }
   &__logo {
+    margin-top: 0.4em;
     // background: url('/img/logo--lex-blue.png');
     // background-size: 100%;
     width: 423px / @logo-size-multiplier;
@@ -24,12 +32,22 @@
       fill: #0da1ec;
     }
   }
-  // &__name {
-  //   font-weight: bold;
-  //   .hide-v;
-  // }
-  // &__title {
-  //   font-weight: normal;
-  //   .hide-v;
-  // }
+  &__name {
+    font-weight: 600;
+    color: #09143b;
+    #TYPE.create(
+      @size: 28px, 
+      @lh: 1.15em, 
+      @margin: false
+    );
+  }
+  &__title {
+    color: #09143b;
+    font-size: 16px;
+    #TYPE.create(
+      @size: 16px, 
+      @lh: 1em, 
+      @margin: false
+    );
+  }
 }
