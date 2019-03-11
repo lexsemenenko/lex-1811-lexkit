@@ -6,34 +6,54 @@
   {{ partial "head.html" . }}
   <body class="in-{{ .Section | urlize }}">
     {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
-    {{ block "menu-main" . }}
-      {{ if false }}
-        {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
-      {{ end }}
-    {{ end }}
-    <div class="section">
+    <div class="section header">
       <div class="group">
-        <div class="doc">
-          <div class="doc-header">
-            <div class="doc-header__logo">
+        <div data-grid="columns: 12">
+          <div data-grid-item="width: 4, width-large: 4">
+            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+          </div>
+          <div data-grid-item="width: 4, width-large: 4">
+            <div class="header__logo">
               <a href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
                   <path d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z" paint-order="stroke"/>
                 </svg>
               </a>  
             </div>
-            <h2 class="doc-header__title">
-              <span class="doc-header__name">Lex Semenenko</span>
-              <span class="doc-header__title">Front-End & Web Developer</span>
-            </h2>
           </div>
-          <div class="wysiwyg">
-            {{ block "content" . }}{{ end }}
+          <div data-grid-item="width: 4, width-large: 4">
+            {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
           </div>
         </div>
       </div>
     </div>
+    {{ block "hero" . }}
+    {{ end }}
 
+    {{ block "content" . }}
+    {{ end }}
+
+    <div class="section footer">
+      <div class="group">
+        <div data-grid="columns: 12">
+          <div data-grid-item="width: 4, width-large: 4">
+
+          </div>
+          <div data-grid-item="width: 4, width-large: 4">
+            <div class="footer__logo">
+              <a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
+                  <path d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z" paint-order="stroke"/>
+                </svg>
+              </a>  
+            </div>
+          </div>
+          <div data-grid-item="width: 4, width-large: 4">
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     {{ partial "scripts-footer.html" . }}
     

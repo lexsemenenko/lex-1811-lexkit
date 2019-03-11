@@ -1,6 +1,7 @@
-.header {
+.footer {
   // background-color: white;
-  @section-hero-bg();
+  background-color: @color-black-3;
+  background: linear-gradient(90deg, darken(@color-black-3, 1.5%) 50%, lighten(@color-black-3, 0%) 50%);
   padding-top: 1.6em;
   padding-bottom: 1em;
   &__logo {
@@ -8,7 +9,7 @@
     width: 423px / @logo-size-multiplier;
     height: 198px / @logo-size-multiplier;
     svg path {
-      fill: #0da1ec;
+      fill: @color-black-25;
     }
   }
 }

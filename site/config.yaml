@@ -64,66 +64,24 @@ menu:
     # Level One
     # =====================================
 
-    - name: "Home"
+    - name: "About"
       weight: 1
-      url: "/"
-      identifier: "home"
-    - name: "Demo"
+      url: #
+      identifier: "about"
+    - name: "Projects"
       weight: 1
-      url: javascript:;
-      identifier: "demo"
-    - name: "Playground"
+      url: #
+      identifier: "projects"
+    - name: "Contact"
       weight: 1
-      url: javascript:;
-      identifier: "playground"
-    - name: "Snippets"
-      weight: 1
-      url: javascript:;
-      identifier: "home"
+      url: #
+      identifier: "contact"
+  
+  # Resume
+  # =============================================================================
 
-
-    # Playground Children
-    # =====================================
-    - name: "JS"
-      identifier: "playground_js"
-      url: javascript:;
-      parent: "Playground"
-
-    # JS Children
-    # -------------------------------------
-    - name: "Objects"
-      identifier: "playground_js_objects"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Object Methods"
-      identifier: "playground_js_object_methods"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Types"
-      identifier: "playground_js_types"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Functions"
-      identifier: "playground_js_functions"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "This"
-      identifier: "playground_js_this"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Constructor & Prototypes"
-      identifier: "playground_js_constructor_prototypes"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Modules"
-      identifier: "playground_js_modules"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "Loops"
-      identifier: "playground_js_loops"
-      url: javascript:;
-      parent: "playground_js"
-    - name: "ES6 Modules"
-      identifier: "playground_js_es6_modules"
-      url: javascript:;
-      parent: "playground_js"
+  resume:
+    # - name: "Resume PDF"
+    #   weight: 2
+    #   url: "/"
+    #   identifier: "resume_pdf"

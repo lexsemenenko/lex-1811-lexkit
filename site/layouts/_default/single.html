@@ -1,25 +1,3 @@
 {{ define "content" }}
   {{ .Content }}
-    
-
-  {{ with .Resources.Match "**.js" }}
-    {{ range . }}
-      <pre>
-        <code class="language-javascript hljs">
-        {{ .Content }}
-        </code>
-      </pre>
-    {{ end }}
-  {{ end }}
-
-{{ end }}
-
-{{ define "scripts-inline" }}
-  {{ with .Resources.Match "**.js" }}
-    {{ range . }}
-<script>
-  {{ .Content | safeJS }}
-</script>
-      {{ end }}
-  {{ end }}
 {{ end }}

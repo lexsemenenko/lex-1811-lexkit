@@ -1,0 +1,45 @@
+{{ $currentNode := .currentNode -}}
+{{ $loopCount := .loopCount -}}
+{{ $var := .currentNode.Scratch }}
+
+{{ $classname := default "menu-resume" .classname -}}
+{{ $item := print $classname "__" "item" -}}
+{{ $link := print $classname "__" "link" -}}
+{{ $withChildren := default true .children }}
+{{ $attr := default "data-menu" .attribute }}
+
+<ul 
+  class="{{ $classname }}__menu" 
+  {{ $attr | safeHTMLAttr }}="level: {{ $loopCount }}"
+>
+  {{ range $index, $element := .menu -}}
+
+    {{ $isCurrent := $currentNode.IsMenuCurrent "resume" . -}}
+    {{ $hasCurrent := $currentNode.HasMenuCurrent "resume" . -}}
+    {{ $classes := print $item " " (cond $isCurrent (print $item "--active ") "") -}}
+    {{ $classesLink := print $link " " (cond $isCurrent (print $link "--active ") "") -}}
+
+    <li 
+      class="{{ $classes }}" 
+      {{ $attr | safeHTMLAttr }}="active: {{ $isCurrent }}, hasActive: {{ $hasCurrent }}, hasChildren: {{ .HasChildren }}, level: {{ $loopCount }}"
+    >
+      <a 
+        href="{{ .URL | safeURL }}" 
+        class="{{ $classesLink }}"
+      >
+        {{ .Name }}
+      </a>
+        {{ if and .HasChildren $withChildren -}}
+
+          {{ $var.Delete    "menuData" }}
+          {{ $var.SetInMap  "menuData"  "menu" .Children }}
+          {{ $var.SetInMap  "menuData"  "currentNode" $currentNode }}
+          {{ $var.SetInMap  "menuData"  "loopCount" ($loopCount | add 1) }}
+          {{ $var.SetInMap  "menuData"  "classname" $classname }}
+          {{ $var.SetInMap  "menuData"  "attribute" $attr }}
+
+          {{ partial "menu/menu--resume.html" ($var.Get "menuData") -}}
+        {{ end -}}
+      </li>
+  {{end}} 
+</ul>

@@ -10,7 +10,7 @@
   // -----------------------------------
 
   .t-base { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-base, 
       @lh: @t-base-lh, 
       @family: inherit, 
@@ -22,7 +22,7 @@
   // -----------------------------------
 
   .t-large-xx { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-large-xx, 
       @lh: @t-large-xx-lh, 
       @family: inherit, 
@@ -30,7 +30,7 @@
     ); 
   }
   .t-large-x { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-large-x, 
       @lh: @t-large-x-lh, 
       @family: inherit, 
@@ -38,7 +38,7 @@
     ); 
   }
   .t-large { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-large, 
       @lh: @t-large-lh, 
       @family: inherit, 
@@ -46,7 +46,7 @@
     ); 
   }
   .t-small { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-small, 
       @lh: @t-small-lh, 
       @family: inherit, 
@@ -54,7 +54,7 @@
     ); 
   }
   .t-small-x { 
-    .mix-text(
+    #TYPE.create(
       @size: @t-small-x, 
       @lh: @t-small-x-lh, 
       @family: inherit, 
@@ -67,7 +67,9 @@
 
   .t-dense { 
     line-height: @t-lh-dense; 
-    p {  line-height: @t-lh-dense;  }
+    p {  
+      line-height: @t-lh-dense;  
+    }
   }
   .no-lh { line-height: @t-lh-no;  } 
 

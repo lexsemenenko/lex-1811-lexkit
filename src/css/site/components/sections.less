@@ -1,0 +1,27 @@
+
+@section-base: {
+  padding-top: @base-large;
+  padding-bottom: @base-large;
+}
+@section-large: {
+  padding-top: @base-large-xx * 2;
+  padding-bottom: @base-large-xx * 2;
+}
+
+@section-hero-bg: {
+  background: linear-gradient(90deg, lighten(#e1f0fb, 2%) 50%, lighten(#e1f0fb, 0%) 50%);
+} 
+
+.section--hero {
+  @section-large();
+  @section-hero-bg();
+}
+
+.section--lines {
+  @section-base();
+  min-height: 400px;
+  background: #ffffff;
+  background-image: url('/img/section--lines.svg');
+  background-position-x: 50%;
+  background-repeat: repeat-y; 
+}
