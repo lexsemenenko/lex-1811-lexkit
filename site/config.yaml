@@ -79,9 +79,3 @@ menu:
   
   # Resume
   # =============================================================================
-
-  resume:
-    # - name: "Resume PDF"
-    #   weight: 2
-    #   url: "/"
-    #   identifier: "resume_pdf"
