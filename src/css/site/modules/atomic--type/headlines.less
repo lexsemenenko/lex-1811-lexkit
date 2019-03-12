@@ -1,16 +1,47 @@
 .h1 {
   #TYPE.create(
-    @size: @t-large-xx, 
+    @size: @t-large-xxx, 
     @lh: 1em, 
     @family: inherit
   ); 
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
+  color: @color-blue-dark;
+  letter-spacing: -1.25px;
 }
 .h2 {
-
+  #TYPE.create(
+    @size: @t-large-xx, 
+    @lh: 1em, 
+    @family: inherit
+  );
+  color: @color-blue-dark;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  
+  &__block {
+    span {
+      position: relative;
+      display: block;
+      margin-bottom: -0.7em;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 4em;
+      height: .4em;
+      background: lighten(@color-blue, 42%);
+    }
+  }
 }
 .h3 {
-
+  #TYPE.create(
+    @size: @t-large-x, 
+    @lh: 1em, 
+    @family: inherit
+  );
+  color: @color-blue-dark;
+  margin-bottom: 0.8em;
+  font-weight: 600;
 }
 .h4 {
 

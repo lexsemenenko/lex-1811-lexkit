@@ -1,4 +1,21 @@
 .menu-main__menu,
-.menu-main__resume {
-  
+.menu-resume__menu {
+  .mix-list-inline(
+    @list-type: links,
+    @pad-top: 0.4em,
+    @pad-right: 1.5em, 
+    @pad-btm: 0.4em, 
+    @pad-left: 1.5em, 
+    @align: left
+  );
+  a {
+    color: @color-blue-dark;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 15px;
+  }
+}
+.menu-resume__menu {
+  text-align: right;
 }

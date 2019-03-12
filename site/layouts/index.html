@@ -1,13 +1,20 @@
 
 {{ define "hero" }}
-  <div class="secton section--hero">
+  <div class="section section--hero">
     <div class="group">
-        <div data-grid="columns: 12">
-          <div data-grid-item="width: 6">
-            <h1 class="h1">Hello, <span class="t-blue">I'm Lex Semenenko</span></h1>
-            <p class="t-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna.</p>
+      <div data-grid="columns: 12">
+        <div data-grid-item="width: 6">
+          <div class="hero__content-left">
+            <h1 class="h1">I'm <span class="t-blue-dark t-bold">Lex Semenenko</span></h1>
+            <p class="t-large-x">I am a Front-End & Web Developer by trade with perseverance, curiosity, a growth mindset and a passion for emerging tech.</p>
           </div>
         </div>
+        <div data-grid-item="width: 6">
+          <div class="hero__content-right">
+            <img class="hero__computer" src="/img/computer-dev-v3.svg" alt=""> 
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 {{ end }}
@@ -15,12 +22,74 @@
 {{ define "content" }}
 <div class="section section--lines">
   <div class="group">
+    <h2 class="h2 h2__block"><span>Skills</span></h2>
+    <div data-grid="columns: 12">
+      <div data-grid-item="width: 3">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
+      </div>
+      <div data-grid-item="width: 3">
+        <ul class="t-large">
+          <li>HTML</li>
+          <li>CSS Less, Sass</li>
+          <li>JavaScript, jQuery</li>
+          <li>WordPress, Drupal</li>
+          <li>Hugo, Go Template</li>
+        </ul>
+      </div>
+      <div data-grid-item="width: 3">
+        <ul class="t-large">
+          <li>PHP (CMS)</li>
+          <li>Accessibility</li>
+          <li>Responsive Design</li>
+          <li>NPM, Gulp, Webpack</li>
+          <li>Git</li>
+        </ul>
+      </div>
+      <div data-grid-item="width: 3">
+        <ul class="t-large">
+          <li>Website Maintenance</li>
+          <li>Adobe Creative Suite</li>
+          <li>Browser Testing</li>
+          <li>Debugging</li>
+          <li>Developer Tools</li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section section--lines">
+  <div class="group">
+    <h2 class="h2 h2__block"><span>Projects</span></h2>
+    <div data-grid="columns: 12">
+      <div data-grid-item="width: 6">
+        <h3 class="h3"><span>World Bank: Combatting Cybercrime</span></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
+      </div>
+      <div data-grid-item="width: 6">
+        <p>[images]</p>
+      </div>
+    </div>
+    <div data-grid="columns: 12">
+      <div data-grid-item="width: 6">
+        <h3 class="h3"><span>World Bank:  CGAP Annual Report</span></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
+      </div>
+      <div data-grid-item="width: 6">
+        <p>[images]</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section section--lines-dark">
+  <div class="group">
+    <h2 class="h2 h2__block"><span>Contact</span></h2>
     <div data-grid="columns: 12">
       <div data-grid-item="width: 6">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
       </div>
       <div data-grid-item="width: 6">
-
+        <p>[form]</p>
       </div>
     </div>
   </div>

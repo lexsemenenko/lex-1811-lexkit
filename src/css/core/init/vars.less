@@ -15,20 +15,33 @@ Changes:            1.0.0 | ...
 // =============================================================================
 
 
-/* open-sans-regular - latin */
+// open-sans-regular - latin
+// @font-face {
+//   font-family: 'Open Sans';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url('/fonts/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
+//   src: local('Open Sans Regular'), local('OpenSans-Regular'),
+//        url('/fonts/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('/fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+//        url('/fonts/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+//        url('/fonts/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+//        url('/fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+// }
+// open-sans-300 - latin
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('/fonts/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('/fonts/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+  font-weight: 300;
+  src: url('/fonts/open-sans-v15-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('/fonts/open-sans-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/open-sans-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/open-sans-v15-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('/fonts/open-sans-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/fonts/open-sans-v15-latin-300.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
-/* open-sans-600 - latin */
+// open-sans-600 - latin
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -42,6 +55,8 @@ Changes:            1.0.0 | ...
        url('/fonts/open-sans-v15-latin-600.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
+
+
 @toggle-rem:                  on;                                               // rem units
 @t-margin-multiplier:         1;                                             // Amount the margin should be altered from the line-height
 
@@ -51,9 +66,11 @@ Changes:            1.0.0 | ...
 
 @t-family-base:               'Open Sans', 'Arial', sans-serif;
 
-@t-large-xx:                  39px;
+@t-large-xxx:                 55px;
+@t-large-xxx-lh:              @t-base-lh;
+@t-large-xx:                  40px;
 @t-large-xx-lh:               @t-base-lh;
-@t-large-x:                   25px;
+@t-large-x:                   26px;
 @t-large-x-lh:                @t-base-lh;
 @t-large:                     21px;
 @t-large-lh:                  @t-base-lh;
@@ -163,7 +180,7 @@ Changes:            1.0.0 | ...
 // Colors
 // =============================================================================
 
-@color-blue:                  #2c80af; // THe only color in globals (used as default)
+@color-blue:                  #0da1ec; // THe only color in globals (used as default)
 
 @color-black:                 #000000;
 @color-black-95:              #373537;

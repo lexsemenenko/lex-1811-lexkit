@@ -1,7 +1,9 @@
+@section-base-padding-v:      @base-large*3;
+
 
 @section-base: {
-  padding-top: @base-large;
-  padding-bottom: @base-large;
+  padding-top: @section-base-padding-v;
+  padding-bottom: @section-base-padding-v;
 }
 @section-large: {
   padding-top: @base-large-xx * 2;
@@ -19,9 +21,27 @@
 
 .section--lines {
   @section-base();
-  min-height: 400px;
   background: #ffffff;
   background-image: url('/img/section--lines.svg');
   background-position-x: 50%;
-  background-repeat: repeat-y; 
+  background-repeat: repeat-y;
+  & + &  {
+    padding-top: 0;
+  }
+}
+.section--lines-dark {
+  @section-base();
+  background: #222;
+  background-image: url('/img/section--lines-dark.svg');
+  background-position-x: 50%;
+  background-repeat: repeat-y;
+
+  color: rgba(255,255,255,.6);
+  h2, h3 {
+    color: white;
+    &:after {
+      // background: lighten(@color-blue, 112%);
+      opacity: 0.2;
+    }
+  }
 }

@@ -9,10 +9,7 @@
     <div class="section header">
       <div class="group">
         <div data-grid="columns: 12">
-          <div data-grid-item="width: 4, width-large: 4">
-            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
-          </div>
-          <div data-grid-item="width: 4, width-large: 4">
+          <div data-grid-item="width: 2">
             <div class="header__logo">
               <a href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
@@ -21,7 +18,10 @@
               </a>  
             </div>
           </div>
-          <div data-grid-item="width: 4, width-large: 4">
+          <div data-grid-item="width: 6">
+            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+          </div>
+          <div data-grid-item="width: 4">
             {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
           </div>
         </div>
