@@ -77,7 +77,14 @@ module.exports = {
         to: "img/",
         flatten: true
       }
-    ])
+    ]),
+
+    // Add jQuery
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
   ]
 };
 

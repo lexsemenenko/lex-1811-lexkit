@@ -66,16 +66,16 @@ menu:
 
     - name: "About"
       weight: 1
-      url: #
-      identifier: "about"
+      url: '/#about'
+    - name: "Skills"
+      weight: 2
+      url: '/#skills'
     - name: "Projects"
-      weight: 1
-      url: #
-      identifier: "projects"
+      weight: 3
+      url: '/#projects'
     - name: "Contact"
-      weight: 1
-      url: #
-      identifier: "contact"
+      weight: 4
+      url: '/#contact'
   
   # Resume
   # =============================================================================

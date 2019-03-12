@@ -2,5 +2,13 @@
 
 import "./css/main.less";
 
-// Say hello
-console.log("🦊 Hello! Edit me in src/index.js");
+var lexkit = function () {
+  // Framework Variables
+  var _g,
+    _system = {};
+
+};
+
+$(document).ready(function () {
+  lexkit();
+});

@@ -1,8 +1,8 @@
 .header {
   // background-color: white;
   @section-hero-bg();
-  padding-top: 1.6em;
-  padding-bottom: 1em;
+  padding-top: 20px;
+  padding-bottom: 20px;
   &__logo {
     // margin: 0 auto;
     width: 423px / @logo-size-multiplier;
@@ -11,4 +11,11 @@
       fill: @color-blue;
     }
   }
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+}
+#about {
+  margin-top: 80px;
 }
