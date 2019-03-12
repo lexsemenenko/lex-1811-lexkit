@@ -1,13 +1,17 @@
-.menu-main__menu,
-.menu-resume__menu {
+.menu-main,
+.menu-resume {
   .mix-list-inline(
     @list-type: links,
     @pad-top: 0.4em,
     @pad-right: 1.5em, 
     @pad-btm: 0.4em, 
     @pad-left: 1.5em, 
-    @align: left
+    @align: center
   );
+}
+
+.menu-main__menu,
+.menu-resume__menu {
   a {
     color: @color-blue-dark;
     text-transform: uppercase;

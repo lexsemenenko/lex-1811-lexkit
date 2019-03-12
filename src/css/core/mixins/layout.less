@@ -16,8 +16,17 @@
   }
 }
 // When using on links
-.mix-list-inline(@pad-top: 0, @pad-right: 0, @pad-btm: 0, @pad-left: 0, @align: left, @list-type: none) when (@list-type = links) {
-  ul { text-align: @align; }
+.mix-list-inline(
+  @pad-top: 0, 
+  @pad-right: 0, 
+  @pad-btm: 0, 
+  @pad-left: 0, 
+  @align: left, 
+  @list-type: none) when (@list-type = links) {
+  ul { 
+    text-align: @align;
+  }
+
   li { 
     display: inline-block; 
     text-align: center;

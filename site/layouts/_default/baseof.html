@@ -6,7 +6,7 @@
   {{ partial "head.html" . }}
   <body class="in-{{ .Section | urlize }}">
     {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
-    <div class="section header">
+    <div id="header" class="section header">
       <div class="group">
         <div data-grid="columns: 12">
           <div data-grid-item="width: 2">
@@ -19,10 +19,14 @@
             </div>
           </div>
           <div data-grid-item="width: 8">
-            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+            <div class="menu-main">
+              {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+            </div>
           </div>
           <div data-grid-item="width: 2">
-            {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
+            <div class="menu-resume">
+              {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
+            </div>
           </div>
         </div>
       </div>

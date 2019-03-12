@@ -1,6 +1,7 @@
 .header {
-  // background-color: white;
-  @section-hero-bg();
+  background-color: lighten(#e1f0fb, 4%);
+  border-bottom: 1px solid #e1f0fb;
+  // @section-hero-bg();
   padding-top: 20px;
   padding-bottom: 20px;
   &__logo {
@@ -15,6 +16,17 @@
   z-index: 100;
   top: 0;
   width: 100%;
+
+  transition: background 0.3s ease-out;
+  // transition: padding 0.3s ease;
+
+  &.active {
+    background: white;
+    // padding-top: 10px;
+    // padding-bottom: 10px;
+    transition: background 0.3s ease-in;
+    // transition: padding 0.3s ease;
+  }
 }
 #about {
   margin-top: 80px;
