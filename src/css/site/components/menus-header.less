@@ -3,9 +3,9 @@
   .mix-list-inline(
     @list-type: links,
     @pad-top: 0.4em,
-    @pad-right: 1.5em, 
+    @pad-right: 14px, 
     @pad-btm: 0.4em, 
-    @pad-left: 1.5em, 
+    @pad-left: 14px, 
     @align: center
   );
 }
@@ -20,6 +20,34 @@
     font-size: 15px;
   }
 }
+
+.menu-main__menu {
+  a {
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      bottom: 8px;
+      height: 7px;
+      background-color: transparent;
+      transition: 0.3s ease-out;
+      transition-property: background-color,border-color,box-shadow,height, right;
+      left: 14px;
+      right: calc(102% - 14px);
+    }
+  }
+  a.active {
+    position: relative;
+    &::before {
+      right: 14px;
+      // transition-property: background-color,border-color,box-shadow,height, right;
+      background-color: darken(#e1f0fb, 7%);
+    }
+  }
+}
+
 .menu-resume__menu {
   text-align: right;
 }
