@@ -1,5 +1,5 @@
-title: Codekit
-# subTitle: Subtitle
+title: Lex Semenenko
+subTitle: Front-End & Web Developer
 
 #Debugging
 log: false
@@ -79,3 +79,11 @@ menu:
   
   # Resume
   # =============================================================================
+
+  resume:
+
+    # Level One
+    # =====================================
+    - name: "Resume"
+      weight: 1
+      url: '#'

@@ -53,7 +53,18 @@
           padding-left:       @gutter;
           padding-right:      @gutter;
         }
-        
+
+        // Alignment options
+        &[@{_attr}*="align: middle"] {
+          align-items:        center;
+        }
+        &[@{_attr}*="align: end"] {
+          align-items:        flex-end;
+        }
+        &[@{_attr}*="align: start"] {
+          align-items:        flex-start;
+        }
+
         // Generated props for item
         #G._widths(@grid);
 
@@ -123,6 +134,7 @@
     @columns: @grid[columns];
     @_selectGrid: e('[@{attr}*="columns: @{columns}"]');
     @_attrItem: e('@{attr}-item');
+    @_attr: e(@attr);
     @_columns: e('columns: @{columns}');
     @_selectItem: e('[@{attr}-item]');
   }
