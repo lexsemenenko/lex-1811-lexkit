@@ -5,6 +5,10 @@
   padding-top: @section-base-padding-v;
   padding-bottom: @section-base-padding-v;
 }
+@section-small: {
+  padding-top: @base-large;
+  padding-bottom: @base-large;
+}
 @section-large: {
   padding-top: @base-large-xx * 2;
   padding-bottom: @base-large-xx * 2;
@@ -40,6 +44,19 @@
       // background: lighten(@color-blue, 112%);
       opacity: 0.2;
     }
+  }
+}
+.section--content {
+  @section-small();
+  background: #ffffff;
+}
+
+.section--page-title {
+  @section-small();
+  background-color: lighten(#e1f0fb, 2%);
+  h1, h2 {
+    .t-semibold;
+    margin-bottom: 0;
   }
 }
 
