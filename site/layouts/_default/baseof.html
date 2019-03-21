@@ -8,6 +8,16 @@
     {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
     <div id="header" class="section header">
       <div class="group">
+        <div class="menu-mobile" data-collapsible="open: false">
+          <button class="menu-mobile__toggle" data-collapsible="open: false">
+            <span class="hide-v">Menu</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg>
+          </button>
+          <div class="menu-mobile__content" data-collapsible="open: false">
+            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+            {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
+          </div>
+        </div>
         <div data-grid="columns: 12">
           <div data-grid-item="width: 2">
             <div class="header__logo">

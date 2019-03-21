@@ -2,6 +2,8 @@
 // Highlight Menu link
 // =============================================================================
 
+import { sel } from "../core/global"
+
 export function menuScroll () {
 // Get all sections that have an ID defined
   let sections = document.querySelectorAll('.section--menu[id]')
@@ -9,7 +11,7 @@ export function menuScroll () {
   let pageHeaderHeight = pageHeader.outerHeight()
 
   // Add an event listener listening for scroll
-  $(window).on('scroll', navHighlighter)
+  sel.$window.on('scroll', navHighlighter)
 
   function navHighlighter () {
     // Get current scroll position
