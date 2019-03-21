@@ -15,11 +15,12 @@ module.exports = merge(common, {
 
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
+      // Uglify JS not supporting es6. Use this instead https://github.com/webpack-contrib/terser-webpack-plugin
+      // new UglifyJsPlugin({
+      //   cache: true,
+      //   parallel: true,
+      //   sourceMap: true
+      // }),
 
       new MiniCssExtractPlugin({
         filename: "[name].[hash:5].css",

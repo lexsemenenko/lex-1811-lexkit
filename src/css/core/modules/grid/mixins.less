@@ -67,6 +67,7 @@
 
         // Generated props for item
         #G._widths(@grid);
+        #G._offsets(@grid);
 
       };
     }
@@ -104,6 +105,7 @@
 
         // Generated props
         #G._widths(@grid, '-@{suffix}');
+        #G._offsets(@grid, '-@{suffix}');
       }
     }
   }
@@ -124,6 +126,17 @@
         width:                @width;
         flex-basis:           @width;
         max-width:            @width;
+      }
+    }
+  }
+
+  ._offsets(@grid, @suffix: '') {
+
+    #G._getVars(@grid);
+
+    .for(@i: 1, @n: @columns) {
+      > [@{_attrItem}*="offset@{suffix}: @{i}"] {
+        margin-left:          @columnWidth * @i;
       }
     }
   }
