@@ -31,6 +31,31 @@
       > @{_selectItem} {
         min-height: 1px; 
       }
+      // This is for value of true and also covers all options below
+      &[@{_attr}*="gutters-row:"] {
+        > @{_selectItem} {
+          padding-top:        @gutter;
+          padding-bottom:     @gutter;
+        }
+      }
+      &[@{_attr}*="gutters-row: top"] {
+        > @{_selectItem} {
+          //&.@{equalheight--class--row-last} {
+          //  padding-bottom: 0;
+          //}
+        }
+      }
+      &[@{_attr}*="gutters-row: bottom"] {
+        > @{_selectItem} {
+          //&.@{equalheight--class--row-first} {
+          //  padding-top: 0;
+          //}
+        }
+      }
+      &[@{_attr}*="gutters-row: fit"] {
+        margin-top:           -@gutter;
+        margin-bottom:        -@gutter;
+      }
     }
 
     // Within Breakpoint
