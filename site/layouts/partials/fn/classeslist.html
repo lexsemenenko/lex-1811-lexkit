@@ -1,0 +1,33 @@
+{{/* Description    Function takes agruments as string of class names spearated
+                    by a pipe character, then you can print it anywhere in your
+                    shortcode.
+
+// In Page
+{{< shortcode classes="t-center|t-bold">}} {{< /shortcode >}}
+
+// In Shortcode
+// Example 1
+{{ partial "fn/classeslist.html" (dict "classes" $classes "currentNode" . ) }}
+{{ $classes := $var.Get "classesList" }}
+// Example 2
+{{ partial "fn/classeslist.html" (dict "classes" $title_classes "currentNode" . ) }}
+{{ $title_classes := $var.Get "classesList" }}
+*/}}
+
+{{ $var := .currentNode.Scratch }}
+{{ $classes := index . "classes" }}
+{{ $currentNode := index . "currentNode" }}
+{{ $delimiter := "|" }}
+
+{{ if $classes }}
+  {{ if not (in $classes $delimiter) }}
+    {{ $var.Set "classesList" (slice $classes) }}
+  {{ else }}
+    {{ $var.Set "classesList" slice }}
+    {{ range $i, $item :=  (split $classes $delimiter) }}
+      {{ $itemTrimmed := (strings.TrimLeft " " (strings.TrimRight " " $item ))}}
+      {{ $var.Add "classesList" $itemTrimmed }}
+    {{ end }}
+  {{ end }}
+  {{ $var.Set "classesList" (delimit ($var.Get "classesList") " ") }}
+{{ end }}

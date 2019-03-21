@@ -1,0 +1,17 @@
+{{ $currentNode := index . "currentNode" }}
+{{ $var := $currentNode.Scratch }}
+{{ $field := index . "field" }}
+{{ $delimiter := "|" }}
+
+
+{{ if $field }}
+  {{ if not (in .field $delimiter) }}
+    {{ $var.Set "arraylist" (slice $field) }}
+  {{ else }}
+    {{ $var.Set "arraylist" slice }}
+    {{ range $i, $item :=  (split $field $delimiter) }}
+      {{ $itemTrimmed := (strings.TrimLeft " " (strings.TrimRight " " $item ))}}
+      {{ $var.Add "arraylist" $itemTrimmed }}
+    {{ end }}
+  {{ end }}
+{{ end }}

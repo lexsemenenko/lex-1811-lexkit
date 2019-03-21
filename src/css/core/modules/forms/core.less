@@ -14,11 +14,9 @@ Core Forms: General
 //
 
 
-
 // =============================================================================
 // Core Styles
 // =============================================================================
-
 
 // General Elements
 // =============================================================================
@@ -31,13 +29,11 @@ fieldset, form, label, legend, input {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
 }
 
 // Form Elements
 // =====================================
 
-// Form
 form {
   margin: 0;
   padding: 0;
@@ -52,16 +48,13 @@ fieldset {
   }
 }
 
-
-// 1. Needed for inputs to be on a new line
-
 label {
-  //#TYPE.create(
-  //  @size: @t-small,
-  //  @lh: 0.9em
-  //);
+  #TYPE.create(
+    @size: @t-small,
+    @lh: 0.9em
+  );
   color: @form-label-color;
-  display: block; // 1
+  display: block;
   margin-bottom: @form-label-margin;
 }
 
@@ -80,19 +73,17 @@ input[type="email"],
 input[type="month"],
 input[type="week"],
 input[type="color"] {
-  //#TYPE.create-input(
-  //  @height: @form-element-height,
-  //  @bg-color: @form-element-bg-color,
-  //  @font-color: @t-base-color,
-  //  @font-size: @t-base,
-  //  @border-width: 1px,
-  //  @border-color: @form-brd-color,
-  //  @border-radius: @form-element-radius,
-  //  @width: 100%
-  //);
+  #FORM.input-text(
+    @height: @form-element-height,
+    @bg-color: @form-element-bg-color,
+    @font-color: @t-base-color,
+    @font-size: @t-base,
+    @border-width: 1px,
+    @border-color: @form-brd-color,
+    @border-radius: @form-element-radius,
+    @width: 100%
+  );
 }
-
-// Checkbox Field
 
 // Note:            Checkbox label should come right after checkbox input
 
@@ -161,16 +152,16 @@ input {
 }
 
 textarea {
-  //#TYPE.create-input(
-  //  @height: 200px,
-  //  @bg-color: @form-element-bg-color,
-  //  @font-color: @t-base-color,
-  //  @font-size: @t-base,
-  //  @border-width: 1px,
-  //  @border-color: @form-brd-color,
-  //  @border-radius: @form-element-radius,
-  //  @width: 100%
-  //);
+  #FORM.input-text(
+    @height: 150px,
+    @bg-color: @form-element-bg-color,
+    @font-color: @t-base-color,
+    @font-size: @t-base,
+    @border-width: 1px,
+    @border-color: @form-brd-color,
+    @border-radius: @form-element-radius,
+    @width: 100%
+  );
 }
 
 fieldset {
@@ -218,13 +209,12 @@ select {
     max-width: @form-item--size-small-x;
   }
 
-
   // MOD: Types
   // -------------------------------------
 
   &--file when (@toggle-input-file-fancy = on) {
     > input[type="file"] {
-      .hide-v;
+      .hide-v();
     }
     // Make label to look like input
     > label {
@@ -232,7 +222,6 @@ select {
       cursor: pointer;
     }
   }
-
 
   // ELEMENT: Radio or Checkbox Type (Toggle)
   // -------------------------------------
@@ -243,7 +232,6 @@ select {
   &__toggle {
   }
 }
-
 
 .select-list--icon when (@toggle-select-fancy = on) {
   //.mix-select(

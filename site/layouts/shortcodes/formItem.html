@@ -1,0 +1,42 @@
+{{ $var  :=                   .Scratch }}
+{{ $classes :=                .Get "classes"}}
+{{ $description :=            .Get "description" }}
+
+{{/* Label
+// =============================================================================*/}}
+{{ $label :=                  .Get "label" }}
+{{ partial "fn/arraylist.html" (dict "field" $label "currentNode" . ) }}
+{{ $labelData := $var.Get "arraylist" }}
+{{ range $i, $item := $labelData }}
+    {{ if eq $i 0 }}
+        {{ $var.Set "label" $item }}
+    {{ end }}
+    {{ if and (eq $i 1) (eq $item "true") }}
+        {{ $var.Set "label-class" "hide-v" }}
+    {{ end }}
+    {{ if and (eq $i 1) (ne $item "true") }}
+        {{ $var.Set "label-class" $item }}
+    {{ end }}
+
+{{ end }}
+{{ $label := ($var.Get "label") }}
+{{ $labelClass := ($var.Get "label-class") }}
+
+{{/* Type
+// =============================================================================*/}}
+{{ $type :=                   (.Get "type") | default "text" }}
+
+{{/* Placeholder
+// =============================================================================*/}}
+{{ $placeholder :=            (.Get "placeholder") | default "" }}
+
+{{/* Markup
+// =============================================================================*/}}
+
+<div class="form-item ">
+    <label for="item_id" {{ if $labelClass }} class='{{ $labelClass }}' {{ end }}>{{ $label }}</label>
+    <input id="item_id" type="{{ $type }}" value="" {{ if $placeholder }} placeholder="{{ $placeholder }}" {{ end }}>
+    {{ if $description }}
+        <div class="form-item__description">{{ $description }}</div>
+    {{ end }}
+</div>
