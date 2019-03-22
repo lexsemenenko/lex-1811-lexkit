@@ -46,8 +46,8 @@ let collapsibles = function (instanceSettings) {
 
   function _cacheSelections () {
     block = $(s.block)
-    elemToggle = $(s.elemToggle)
-    elemContent = $(s.elemContent)
+    elemToggle = block.find($(s.elemToggle))
+    elemContent = block.find($(s.elemContent))
     elemAll = block.add(elemToggle).add(elemContent)
   }
 

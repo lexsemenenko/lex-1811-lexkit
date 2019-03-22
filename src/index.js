@@ -3,11 +3,6 @@
 import './css/main.less'
 
 // Import Core
-import _events from './js/core/core--events'
-import { sel } from './js/core/global'
-
-// Import Modules
-
 // Import Modules
 import { collapsibles } from './js/modules/module--collapsibles.js'
 
@@ -20,21 +15,36 @@ let lexkit = function () {
   // Commonly needed objects
 
   // Fire Modules
-  let menuMain = collapsibles({
+  // =============================================================================
+
+  collapsibles({
     block: '.menu-mobile',
     elemToggle: '.menu-mobile__toggle',
     elemContent: '.menu-mobile__content',
     closeOutside: false,
     closeAnyClick: true,
-    callbackOpenPost: function () {
-      // console.log("Menu Open");
-    },
-    callbackClosePost: function () {
-      // console.log("Menu Closed");
-    }
-
+    callbackOpenPost: function () {},
+    callbackClosePost: function () {}
   })
   // menuMain.setName("Lex");
+
+
+  $( ".overlay--toggle" ).each(function() {
+
+    let $thisOverlayBlock = $(this)[0];
+
+    collapsibles({
+      block: $thisOverlayBlock,
+      elemToggle: '.overlay__toggle',
+      elemContent: '.overlay__content',
+      closeOutside: true,
+      closeAnyClick: false,
+    })
+
+  });
+
+
+
 
   // Site Specific
   menuScroll()
