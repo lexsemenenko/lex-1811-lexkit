@@ -38,3 +38,33 @@
   @color-name: -blue-dark, 
   @color-value: @color-blue-dark
 );
+
+ #JS.breakpoint(
+   @element: 'body',
+   @breakpoint: ~"screen",
+   @content: 'widescreen'
+ );
+#JS.breakpoint(
+  @element: 'body',
+  @breakpoint: @desktop,
+  @content: 'large'
+);
+#JS.breakpoint(
+  @element: 'body',
+  @breakpoint: @break-primary,
+  @content: 'small'
+);
+
+body {
+  &:after,
+  &:before {
+    .t-semibold;
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    position: absolute;
+    background: tint(@color-blue, 75%);
+    display: block;
+  }
+}

@@ -176,7 +176,18 @@ Changes:            1.0.0 | ...
 
 @chrome: ~"screen and (-webkit-min-device-pixel-ratio:0)";  // Used to traget CHrome Deesktop browser for small tweaks (ie. icon shift in blocks)
 
+// Example of passing a breakpoint to JS with media queries.
 
+// #JS.breakpoint(
+//   @element: 'body',
+//   @breakpoint: ~"screen",
+//   @content: 'widescreen'
+// );
+// #JS.breakpoint(
+//   @element: 'body',
+//   @breakpoint: @break-primary,
+//   @content: 'primary',
+// );
 
 // Colors
 // =============================================================================
