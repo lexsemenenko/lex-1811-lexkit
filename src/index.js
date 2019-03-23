@@ -13,6 +13,7 @@ import { _libraryArray } from './js/library/library--array'
 
 // Import Modules
 import { collapsibles } from './js/modules/module--collapsibles'
+import { sectionHeight } from './js/modules/module--section-height'
 
 // Import Site Specific
 import { smoothScroll } from './js/site/smooth-scroll'
