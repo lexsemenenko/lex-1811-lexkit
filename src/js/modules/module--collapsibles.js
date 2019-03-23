@@ -90,10 +90,10 @@ let collapsibles = function (instanceSettings) {
       _close()
     }
     // Send Data when triggering event
-    events.trigger('collapsible', {
-      hey: 'Hey',
-      heya: 'Hey A'
-    })
+    // events.trigger('collapsible', {
+    //   hey: 'Hey',
+    //   heya: 'Hey A'
+    // })
     // events.trigger('eventTwo', 'Clicked collapsibles three')
     // events.trigger('eventThree', 'Clicked collapsibles four')
   }
