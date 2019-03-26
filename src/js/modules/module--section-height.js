@@ -2,20 +2,52 @@
 // Module: Section Height
 //= =============================================================================
 
-import events from '../core/core--events'
+import { _bundle } from '../core/core--bundles'
+import { bp} from "./module--breakpoints";
 
-let sectionHeight = function (instanceSettings) {
-  'use strict'
+export let sectionHeight = (function () {
 
-  let root = {
+  let options = {
     name: 'Section Height',
-    settings: {
-      block: '.section--height',
-      offset: 80,
-      height: 0.8,
-      mingHeight: false
+    selector: null,
+    height: null,
+    offsetElements: false,
+    mingHeight: false,
+    breakpoint: 'small',
+    breakpointDir: 'up'
+  }
+  let s
+
+  function _mergeSettings (optionsPassed) {
+    s = Object.assign({}, options, optionsPassed)
+  }
+
+  function _setHeight () {
+    let el = $(s.selector)
+    let elOffset = $(s.offsetElements)
+    let offsetHeight = elOffset.outerHeight()
+    let pageHeight = window.innerHeight
+    let sectionHeight = pageHeight
+    if ( s.offsetElements) sectionHeight = pageHeight - offsetHeight
+
+    if (bp.match(s.breakpoint, s.breakpointDir)) {
+      el.css('min-height', sectionHeight + 'px');
+    } else {
+      el.css('min-height', 'auto')
     }
   }
-}
 
-export { sectionHeight }
+  _bundle._add({
+    name: 'Module: Section Height',
+    event: ['on:Ready', 'on:Resize'],
+    fn: function () {
+      _setHeight()
+    }
+  })
+
+  return {
+    setSettings: function (s) {
+      _mergeSettings(s)
+    }
+  }
+})()

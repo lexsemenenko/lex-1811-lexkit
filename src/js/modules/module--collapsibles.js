@@ -2,8 +2,6 @@
 // Module: collapsibles
 //= =============================================================================
 
-import events from '../core/core--events'
-
 let collapsibles = function (instanceSettings) {
   'use strict'
 

@@ -8,10 +8,10 @@ import './js/core/core--events-custom'
 import { _bundle } from './js/core/core--bundles'
 
 // Import Modules
-import './js/modules/module--breakpoints'
 import { collapsibles } from './js/modules/module--collapsibles'
-import { sectionHeight } from './js/modules/module--section-height'
 import { bp } from './js/modules/module--breakpoints'
+import { sectionHeight } from './js/modules/module--section-height'
+import { scrollpoints } from './js/modules/module--scrollpoints'
 
 // Import Site Specific
 import { smoothScroll } from './js/site/smooth-scroll'
@@ -30,8 +30,14 @@ lexkit = function () {
   // Site Specific: Fire Modules
   // =============================================================================
 
+  scrollpoints()
+
   bp.setSettings({
-    breakpointsArray: ['small', 'large', 'widescreens']
+    breakpointsArray: ['small', 'large', 'widescreen']
+  })
+
+  sectionHeight.setSettings({
+    selector: '.section--height'
   })
 
   collapsibles({

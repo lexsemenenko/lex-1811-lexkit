@@ -1,5 +1,5 @@
 {{ define "hero" }}
-  <div id="about" class="section section--menu section--hero">
+  <div id="about" class="section section--menu section--hero  section--height">
     <div class="group">
       <div data-grid="columns: 12, align: middle">
         <div data-grid-item="width: 6">
@@ -17,6 +17,15 @@
     </div>
   </div>
 {{ end }}
+
+{{ define "menu-anchor" }}
+  <div id="about" class="section section--menu-anchors">
+    <div class="group">
+      menu anchors
+    </div>
+  </div>
+{{ end }}
+
 {{ define "content" }}
   <div id="skills" class="section section--menu section--lines">
     <div class="group">
