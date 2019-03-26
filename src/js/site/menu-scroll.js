@@ -1,7 +1,7 @@
 // =============================================================================
 // Highlight Menu link
 // =============================================================================
-import { _bundle } from "../core/core--bundles"
+import { _bundle } from '../core/core--bundles'
 
 export function menuScroll () {
 // Get all sections that have an ID defined

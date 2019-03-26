@@ -35,7 +35,11 @@ _bundle.fire = function () {
         // This way, inside each bundle's main function, we make 'this' refer to
         // each bundles object
         let boundFunction = function () {
-          eachBundle.fn()
+          if (eachBundle.valueThis) {
+            eachBundle.fn.apply(eachBundle.valueThis)
+          } else {
+            eachBundle.fn()
+          }
         }
         // Call eachBundle functions with bound 'this'
         $(document).on(event, boundFunction)
