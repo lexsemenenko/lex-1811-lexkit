@@ -1,7 +1,7 @@
-@DG__columns:                 12;
-@DG__gutter:                  20px;
-@DG__attr:                    "data-grid";
-@DG__breakpoint:              @laptop-up;
+@G__columns:                 12;
+@G__gutter:                  20px;
+@G__attr:                    "data-grid";
+@G__breakpoint:              @laptop-up;
 
 // Create Grid
 #G.create(
@@ -10,7 +10,7 @@
 
     #G.breakpoint(
       @suffix:                "large", 
-      @gutter:                30px,
+      @gutter:                30px, // Needs to be updated in the grid loop
       @breakpoint:            @desktop-up
     );
 

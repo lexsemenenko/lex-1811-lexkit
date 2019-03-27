@@ -9,7 +9,7 @@ export let sectionHeight = (function () {
 
   let options = {
     name: 'Section Height',
-    selector: null,
+    selectorselector: '.section--height',
     height: null,
     offsetElements: false,
     mingHeight: false,
@@ -41,7 +41,7 @@ export let sectionHeight = (function () {
     name: 'Module: Section Height',
     event: ['on:Ready', 'on:Resize'],
     fn: function () {
-      _setHeight()
+      // _setHeight()
     }
   })
 

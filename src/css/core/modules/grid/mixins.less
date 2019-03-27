@@ -1,10 +1,10 @@
 #G() {
 
   .create(
-    @columns:                 @DG__columns,
-    @gutter:                  @DG__gutter,
-    @attr:                    @DG__attr,
-    @breakpoint:              @DG__breakpoint,
+    @columns:                 @G__columns,
+    @gutter:                  @G__gutter,
+    @attr:                    @G__attr,
+    @breakpoint:              @G__breakpoint,
     @optional:                false
   ) {
 
@@ -94,7 +94,7 @@
         #G._widths(@grid);
         #G._offsets(@grid);
 
-      };
+      }
     }
     // Call optional mixins passed by user
     & when not (@optional = false) {
@@ -111,11 +111,11 @@
   // - Rule position changes (if enabled in the create mixin)
   .breakpoint(
     @suffix:                  "large",
-    @gutter:                  @DG__gutter,
-    @breakpoint:              @DG__breakpoint
+    @gutter:                  @G__gutter,
+    @breakpoint:              @G__breakpoint
   ) {
 
-    // #DG._getVars(@grid);
+     //#G._getVars(@grid);
 
     @media @breakpoint {
 
@@ -170,6 +170,7 @@
     // Used to expose ruleset to local scope and provide additional vars
     @columnWidth: @grid[columnWidth];
     @columns: @grid[columns];
+    //@gutter: @grid[gutter];
     @_selectGrid: e('[@{attr}*="columns: @{columns}"]');
     @_attrItem: e('@{attr}-item');
     @_attr: e(@attr);

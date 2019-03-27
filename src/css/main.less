@@ -13,3 +13,49 @@
 
 @import "core/base/utilities";
 .mix-bottom-stylesheet();
+
+//* {
+//  outline: 1px solid magenta !important;
+//  background: bisque !important;
+//  color: white !important;
+//}
+
+.scrollpoint__trigger {
+  content: '';
+  height: 1px;
+  background: magenta;
+  position: absolute;
+  top: auto;
+  width: 100%;
+  transition: top 0.25s ease;
+  z-index: 9999;
+}
+
+#about {
+  //opacity: 0;
+  height: 100vh;
+}
+
+.section {
+  &.scrollpoint {
+    &.active {
+      background: tint(#c678dd, 80%) !important;
+    }
+  }
+}
+
+.scrollpoint--menu-anchor {
+  //height: 200px;
+  background: tint(#c678dd, 50%) !important;
+  transition: color 0.3 ease;
+  z-index: 1;
+  position: relative;
+  top: 0;
+  &.active {
+    //background: tint(#c678dd, 40%) !important;
+    position: fixed;
+    //left: 0;
+    //right: 0;
+    width: 100%;
+  }
+}

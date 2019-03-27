@@ -30,14 +30,41 @@ lexkit = function () {
   // Site Specific: Fire Modules
   // =============================================================================
 
-  scrollpoints()
+  // sectionHeight.setSettings({
+  //   selector: '.section--height'
+  // })
+
+  scrollpoints({
+    scrollpoint: '.scrollpoint',
+    classActive: 'active',
+    elementOffset: '#header',
+    direction: 'both',
+    debug: false
+  })
+
+  scrollpoints({
+    scrollpoint: '.scrollpoint--menu-anchor',
+    classActive: 'active',
+    elementOffset: '#header',
+    // offset: 0,
+    debug: false,
+    direction: 'down',
+    callbackActivePost: function () {
+      let _this = this
+      let sp = $(_this.scrollpoint)
+      sp.css('top', $(_this.elementOffset).outerHeight() + 'px')
+      $('body').css('padding-top', sp.height() + 'px')
+    },
+    callbackInactivePost: function () {
+      let _this = this
+      let sp = $(_this.scrollpoint)
+      sp.css('top', 'auto')
+      $('body').css('padding-top', '0')
+    }
+  })
 
   bp.setSettings({
     breakpointsArray: ['small', 'large', 'widescreen']
-  })
-
-  sectionHeight.setSettings({
-    selector: '.section--height'
   })
 
   collapsibles({
@@ -64,7 +91,7 @@ lexkit = function () {
   })
 
   menuScroll()
-  pageHeader()
+  // pageHeader()
   smoothScroll()
 
   // =============================================================================

@@ -30,7 +30,7 @@ $(window).on('resize', debounce(function () {
 // on:Scroll Debounced
 $(window).on('scroll', debounce(function () {
   $.event.trigger('on:Scroll')
-}, 150));
+}, 100));
 
 // on:ResizeEnd
 (function () {
