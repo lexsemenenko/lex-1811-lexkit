@@ -53,17 +53,17 @@ export let scrollpoints = function (instanceSettings) {
       let spHeight = el.offsetHeight
 
 
-      _bundle._add({name: 'Test', event: ['on:Scroll'], fn: function () {
+      _bundle._add({name: 'In Module: Scrollpoints Inside .each', event: ['on:ScrollDefault'], fn: function () {
 
         // let offset = ($(s.elementOffset))
         let amountScrolled = window.pageYOffset
         let trigger = amountScrolled + offset
         let spTouchesTrigger = amountScrolled >= spFromTop
-        let spNotPassedTrigger = amountScrolled <= spFromTop + spHeight
+        let spNotPassedTrigger = amountScrolled < spFromTop + spHeight
 
 
         if (s.direction === 'down') {
-          console.log(spTouchesTrigger, amountScrolled + ' >= ' + spFromTop)
+          // console.log(spTouchesTrigger, amountScrolled + ' >= ' + spFromTop)
           if (spTouchesTrigger) {
             if (s.callbackActivePre) s.callbackActivePre()
             $el.addClass(s.classActive)
@@ -112,7 +112,7 @@ export let scrollpoints = function (instanceSettings) {
   }
 
   _bundle._add({
-    name: 'In Module: Scrollpoint',
+    name: 'In Module: Scrollpoints _setBodyClasses',
     event: ['on:Scroll'],
     fn: function () {
       _setBodyClasses()

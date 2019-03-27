@@ -32,6 +32,11 @@ $(window).on('scroll', debounce(function () {
   $.event.trigger('on:Scroll')
 }, 100));
 
+// on:Scroll Default
+$(window).on('scroll', function () {
+  $.event.trigger('on:ScrollDefault')
+});
+
 // on:ResizeEnd
 (function () {
   let rtime
