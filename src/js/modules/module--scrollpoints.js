@@ -122,3 +122,6 @@ export let scrollpoints = function (instanceSettings) {
   init()
   return root.public
 }
+
+//                  Pass the main module namespace to a smaller
+//                  module, so we can extend the main one from a smaller module.
