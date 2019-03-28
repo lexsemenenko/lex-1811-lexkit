@@ -2,52 +2,51 @@
 // Module: Section Height
 //= =============================================================================
 
-import { _bundle } from '../core/core--bundles'
-import { bp} from "./module--breakpoints";
+import { _bundle } from '../core/core--bundles';
+import { bp } from './module--breakpoints';
 
-export let sectionHeight = (function () {
-
-  let options = {
+export const sectionHeight = (function() {
+  const options = {
     name: 'Section Height',
     selectorselector: '.section--height',
     height: null,
     offsetElements: false,
     mingHeight: false,
     breakpoint: 'small',
-    breakpointDir: 'up'
-  }
-  let s
+    breakpointDir: 'up',
+  };
+  let s;
 
-  function _mergeSettings (optionsPassed) {
-    s = Object.assign({}, options, optionsPassed)
+  function _mergeSettings(optionsPassed) {
+    s = Object.assign({}, options, optionsPassed);
   }
 
-  function _setHeight () {
-    let el = $(s.selector)
-    let elOffset = $(s.offsetElements)
-    let offsetHeight = elOffset.outerHeight()
-    let pageHeight = window.innerHeight
-    let sectionHeight = pageHeight
-    if ( s.offsetElements) sectionHeight = pageHeight - offsetHeight
+  function _setHeight() {
+    const el = $(s.selector);
+    const elOffset = $(s.offsetElements);
+    const offsetHeight = elOffset.outerHeight();
+    const pageHeight = window.innerHeight;
+    let itemHeight = pageHeight;
+    if (s.offsetElements) itemHeight = pageHeight - offsetHeight;
 
     if (bp.match(s.breakpoint, s.breakpointDir)) {
-      el.css('min-height', sectionHeight + 'px');
+      el.css('min-height', `${itemHeight}px`);
     } else {
-      el.css('min-height', 'auto')
+      el.css('min-height', 'auto');
     }
   }
 
   _bundle._add({
     name: 'Module: Section Height',
     event: ['on:Ready', 'on:Resize'],
-    fn: function () {
-      // _setHeight()
-    }
-  })
+    fn() {
+      _setHeight();
+    },
+  });
 
   return {
-    setSettings: function (s) {
-      _mergeSettings(s)
-    }
-  }
-})()
+    setSettings(s) {
+      _mergeSettings(s);
+    },
+  };
+})();

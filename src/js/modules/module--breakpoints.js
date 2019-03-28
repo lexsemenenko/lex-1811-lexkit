@@ -2,43 +2,43 @@
 // Module: Breakpoints
 // ==============================================================================
 
-export let bp = (function () {
-  let options = {
+export const bp = (function() {
+  const options = {
     elPassing: 'body',
-    breakpointsArray: null
-  }
-  let s
-  let currentBreakpoint
+    breakpointsArray: null,
+  };
+  let s;
+  let currentBreakpoint;
 
-  function _mergeSettings (optionsPassed) {
-    s = Object.assign({}, options, optionsPassed)
+  function _mergeSettings(optionsPassed) {
+    s = Object.assign({}, options, optionsPassed);
   }
 
-  function _getCurrentBreakpoint () {
+  function _getCurrentBreakpoint() {
     currentBreakpoint = window
       .getComputedStyle($(s.elPassing)[0], ':before')
       .getPropertyValue('content')
-      .replace(/\"/g, '') // remove quotes
-    return currentBreakpoint
+      .replace(/\"/g, ''); // remove quotes
+    return currentBreakpoint;
   }
 
-  function _directons (breakpoint, direction) {
-    let bpArray = s.breakpointsArray
-    let passed = bpArray.indexOf(breakpoint)
-    let current = bpArray.indexOf(_getCurrentBreakpoint())
-    if (direction === 'up') return current > passed
-    else return current <= passed // Downwards is default
+  function _directons(breakpoint, direction) {
+    const bpArray = s.breakpointsArray;
+    const passed = bpArray.indexOf(breakpoint);
+    const current = bpArray.indexOf(_getCurrentBreakpoint());
+    if (direction === 'up') return current > passed;
+    return current <= passed; // Downwards is default
   }
 
   return {
-    match: function (bp,  dir) {
-      return _directons(bp,  dir)
+    match(bp, dir) {
+      return _directons(bp, dir);
     },
-    get: function () {
-      return _getCurrentBreakpoint()
+    get() {
+      return _getCurrentBreakpoint();
     },
-    setSettings: function (s) {
-      _mergeSettings(s)
-    }
-  }
-})()
+    setSettings(s) {
+      _mergeSettings(s);
+    },
+  };
+})();

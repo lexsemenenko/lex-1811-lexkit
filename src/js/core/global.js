@@ -1,13 +1,13 @@
-let sel = {
+const sel = {
   $document: $(document),
   $window: $(window),
   $body: $(document.body),
   $htmlBody: $('html,body'),
-  $html: $('html')
-}
+  $html: $('html'),
+};
 
-let _library = {
-  test: "test"
-}
+const _library = {
+  test: 'test',
+};
 
-export { sel, _library }
+export { sel, _library };

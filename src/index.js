@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 // JS Goes here - ES6 supported
 
 import './css/main.less';
@@ -22,9 +23,10 @@ import { menuScroll } from './js/site/menu-scroll';
 // =============================================================================
 // =============================================================================
 
-let lexkit;
-lexkit = function () {
-  $(document).ready(() => { $.event.trigger('on:Ready'); });
+function lexkit() {
+  $(document).ready(() => {
+    $.event.trigger('on:Ready');
+  });
 
   // =============================================================================
   // Site Specific: Fire Modules
@@ -39,7 +41,7 @@ lexkit = function () {
     classActive: 'active',
     elementOffset: '#header',
     direction: 'both',
-    debug: false
+    debug: false,
   });
 
   scrollpoints({
@@ -67,20 +69,17 @@ lexkit = function () {
     breakpointsArray: ['small', 'large', 'widescreen'],
   });
 
-
   collapsibles({
     block: '.menu-mobile',
     elemToggle: '.menu-mobile__toggle',
     elemContent: '.menu-mobile__content',
     closeOutside: false,
     closeAnyClick: true,
-    callbackOpenPost() {
-    },
-    callbackClosePost() {
-    },
+    callbackOpenPost() {},
+    callbackClosePost() {},
   });
 
-  $('.overlay--toggle').each(function () {
+  $('.overlay--toggle').each(function() {
     const $thisOverlayBlock = $(this)[0];
     collapsibles({
       block: $thisOverlayBlock,
@@ -100,7 +99,7 @@ lexkit = function () {
   // =============================================================================
 
   _bundle.fire();
-};
+}
 
 $(document).ready(() => {
   window._lxGlobal = lexkit();

@@ -1,3 +1,3 @@
-export function _Base (options) {
-  Object.assign(this, options)
+export function _Base(options) {
+  Object.assign(this, options);
 }
