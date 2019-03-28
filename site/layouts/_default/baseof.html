@@ -3,71 +3,89 @@
 
 <!doctype html>
 <html lang="{{ $.Site.Language.Lang }}">
-  {{ partial "head.html" . }}
-  <body class="in-{{ .Section | urlize }}">
-    {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
-    <div id="header" class="section header scrollpoint-header">
-      <div class="group">
-        <div class="menu-mobile" data-collapsible="open: false">
-          <button class="menu-mobile__toggle" data-collapsible="open: false">
-            <span class="hide-v">Menu</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="navbar-toggle-icon"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg>
-          </button>
-          <div class="menu-mobile__content" data-collapsible="open: false">
-            {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+{{ partial "head.html" . }}
+
+<body class="in-{{ .Section | urlize }}">
+  {{/* <img src="/img/logo--lex-blue.png" alt="Logo"> */}}
+  <div id="header" class="section header scrollpoint-header">
+    <div class="group">
+      <div class="menu-mobile" data-collapsible="open: false">
+        <button class="menu-mobile__toggle" data-collapsible="open: false">
+          <span class="hide-v">Menu</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            data-svg="navbar-toggle-icon">
+            <rect y="9" width="20" height="2"></rect>
+            <rect y="3" width="20" height="2"></rect>
+            <rect y="15" width="20" height="2"></rect>
+          </svg>
+        </button>
+        <div class="menu-mobile__content" data-collapsible="open: false">
+          {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
+          {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
+        </div>
+      </div>
+      <div data-grid="columns: 12">
+        <div data-grid-item="width: 2">
+          <div class="header__logo">
+            <a href="/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
+                <path
+                  d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z"
+                  paint-order="stroke" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div data-grid-item="width: 8">
+          <div class="menu-main">
+            <ul class="menu-main__menu scrollpoints-watch--menu">
+              <li data-scrollpoint-watch="skills" class="menu-main__item"><a href="/#skills"
+                  class="menu-main__link">Skills</a></li>
+              <li data-scrollpoint-watch="projects" class="menu-main__item"><a href="/#projects"
+                  class="menu-main__link">Projects</a></li>
+              <li data-scrollpoint-watch="contact" class="menu-main__item"><a href="/#contact"
+                  class="menu-main__link">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div data-grid-item="width: 2">
+          <div class="menu-resume">
             {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
           </div>
         </div>
-        <div data-grid="columns: 12">
-          <div data-grid-item="width: 2">
-            <div class="header__logo">
-              <a href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
-                  <path d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z" paint-order="stroke"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div data-grid-item="width: 8">
-            <div class="menu-main">
-              {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
-            </div>
-          </div>
-          <div data-grid-item="width: 2">
-            <div class="menu-resume">
-              {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
-            </div>
+      </div>
+    </div>
+  </div>
+  {{ block "hero" . }}
+  {{ end }}
+
+  {{ block "menu-anchor" . }}
+  {{ end }}
+
+  {{ block "content" . }}
+  {{ end }}
+
+  <div class="section footer">
+    <div class="group">
+      <div data-grid="columns: 12">
+        <div data-grid-item="width: 4, offset: 4">
+          <div class="footer__logo">
+            <a href="/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
+                <path
+                  d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z"
+                  paint-order="stroke" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </div>
-    {{ block "hero" . }}
-    {{ end }}
+  </div>
 
-    {{ block "menu-anchor" . }}
-    {{ end }}
+  {{ partial "scripts-footer.html" . }}
 
-    {{ block "content" . }}
-    {{ end }}
+  {{/* <!-- {{ blo ck "scripts-inline" . }}{{ end }} --> */}}
+</body>
 
-    <div class="section footer">
-      <div class="group">
-        <div data-grid="columns: 12">
-          <div data-grid-item="width: 4, offset: 4">
-            <div class="footer__logo">
-              <a href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
-                  <path d="M39 151h60v146h74V151h162l26 42 28-42h67l-60 96 66 102h-72l-31-48-29 48H39zm195 146h59l32-49-28-45h-64l33 45z" paint-order="stroke"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {{ partial "scripts-footer.html" . }}
-    
-    {{/* <!-- {{ blo ck "scripts-inline" . }}{{ end }} --> */}}
-  </body>
-</html> 
+</html>

@@ -1,13 +1,13 @@
 import { _bundle } from '../core/core--bundles';
 
-export const scrollpoints = function(instanceSettings) {
+const scrollpoints = function(instanceSettings) {
   const root = {
     settings: {
       scrollpoint: null,
       classActive: null,
       elementOffset: null,
       offset: 0,
-      watch: '.scrollpoint--watch',
+      watch: null,
       direction: 'both', // both or up or down
       debug: false,
       callbackActivePre: false,
@@ -24,6 +24,8 @@ export const scrollpoints = function(instanceSettings) {
   let s;
   let scrollpoint;
   let debugTrigger;
+  let $watch;
+  let classActive;
 
   function _mergeSettings() {
     s = Object.assign({}, root.settings, root.instance.settings);
@@ -31,6 +33,8 @@ export const scrollpoints = function(instanceSettings) {
 
   function _cacheSelections() {
     scrollpoint = $(s.scrollpoint);
+    $watch = $(s.watch);
+    ({ classActive } = s); // this is the same as (classActive = s.classActive)
   }
 
   function _debugVisually() {
@@ -90,6 +94,22 @@ export const scrollpoints = function(instanceSettings) {
     });
   }
 
+  // Check for anyelement watching the points
+
+  function watchScrollpoints() {
+    $watch.find('[data-scrollpoint-watch]').each(function() {
+      const el = $(this);
+      const watchPointName = el.data('scrollpoint-watch');
+      const $spItem = $(`#${watchPointName}`);
+      const currentWatchItem = $(`a[href*=${watchPointName}]`);
+      if ($spItem.hasClass(classActive)) {
+        currentWatchItem.addClass(classActive);
+      } else {
+        currentWatchItem.removeClass(classActive);
+      }
+    });
+  }
+
   let scrollPosition = $(window).scrollTop();
   function _setBodyClasses() {
     // should start at 0
@@ -111,6 +131,7 @@ export const scrollpoints = function(instanceSettings) {
     event: ['on:Scroll'],
     fn() {
       _setBodyClasses();
+      watchScrollpoints();
     },
   });
   function init() {
@@ -124,3 +145,15 @@ export const scrollpoints = function(instanceSettings) {
 
   return root.public;
 };
+
+//                  Pass the main module namespcase to a smaller
+//                  module, so we can extend the main one from a smaller module.
+
+const test = (function(bigMod) {
+  bigMod.extension = function() {
+    console.log('Extention');
+  };
+  return bigMod;
+})(scrollpoints || {});
+
+export { scrollpoints, test };

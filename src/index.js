@@ -12,12 +12,11 @@ import { _bundle } from './js/core/core--bundles';
 import { collapsibles } from './js/modules/module--collapsibles';
 import { bp } from './js/modules/module--breakpoints';
 // import { sectionHeight } from './js/modules/module--section-height';
-import { scrollpoints } from './js/modules/module--scrollpoints';
+import { scrollpoints, test } from './js/modules/module--scrollpoints';
 
 // Import Site Specific
 import { smoothScroll } from './js/site/smooth-scroll';
 import { pageHeader } from './js/site/page-header';
-import { menuScroll } from './js/site/menu-scroll';
 
 // =============================================================================
 // =============================================================================
@@ -42,6 +41,7 @@ function lexkit() {
     elementOffset: '#header',
     direction: 'both',
     debug: false,
+    watch: '.scrollpoints-watch--menu',
   });
 
   scrollpoints({
@@ -90,7 +90,6 @@ function lexkit() {
     });
   });
 
-  menuScroll();
   pageHeader();
   smoothScroll();
 

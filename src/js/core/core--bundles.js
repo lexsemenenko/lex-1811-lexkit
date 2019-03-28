@@ -28,7 +28,7 @@ _bundle._bundlesStorage = [];
 _bundle._add = function(bundleObj) {
   _bundle._bundlesStorage.push(bundleObj);
 };
-console.log(_bundle._bundlesStorage);
+
 _bundle.fire = function() {
   _bundle._bundlesStorage.forEach(function(eachBundle) {
     // Fire each bundle's function if events in bundles and events available cross

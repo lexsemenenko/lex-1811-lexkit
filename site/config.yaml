@@ -64,19 +64,6 @@ menu:
     # Level One
     # =====================================
 
-    - name: "About"
-      weight: 1
-      url: '/#about'
-    - name: "Skills"
-      weight: 2
-      url: '/#skills'
-    - name: "Projects"
-      weight: 3
-      url: '/#projects'
-    - name: "Contact"
-      weight: 4
-      url: '/#contact'
-  
   # Resume
   # =============================================================================
 
