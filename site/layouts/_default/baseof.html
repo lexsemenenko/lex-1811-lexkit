@@ -25,7 +25,7 @@
         </div>
       </div>
       <div data-grid="columns: 12">
-        <div data-grid-item="width: 2">
+        <div data-grid-item="width: 6">
           <div class="header__logo">
             <a href="/">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="39 151 423 198" aria-hidden="true">
@@ -36,21 +36,9 @@
             </a>
           </div>
         </div>
-        <div data-grid-item="width: 8">
-          <div class="menu-main">
-            <ul class="menu-main__menu scrollpoints-watch--menu">
-              <li data-scrollpoint-watch="skills" class="menu-main__item"><a href="/#skills"
-                  class="menu-main__link">Skills</a></li>
-              <li data-scrollpoint-watch="projects" class="menu-main__item"><a href="/#projects"
-                  class="menu-main__link">Projects</a></li>
-              <li data-scrollpoint-watch="contact" class="menu-main__item"><a href="/#contact"
-                  class="menu-main__link">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-        <div data-grid-item="width: 2">
+        <div data-grid-item="width: 6">
           <div class="menu-resume">
-            {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
+            <!-- {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }} -->
           </div>
         </div>
       </div>

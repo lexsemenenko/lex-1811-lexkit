@@ -50,13 +50,12 @@ const scrollpoints = function(instanceSettings) {
         ? $(s.elementOffset).outerHeight()
         : s.offset;
       const spFromTop = $el.offset().top - offset;
-      const spHeight = el.offsetHeight;
+      const spHeight = $el.outerHeight();
 
       _bundle._add({
         name: 'In Module: Scrollpoints Inside .each',
         event: ['on:ScrollDefault'],
         fn() {
-          // let offset = ($(s.elementOffset))
           const amountScrolled = window.pageYOffset;
           const trigger = amountScrolled + offset;
           const spTouchesTrigger = amountScrolled >= spFromTop;
