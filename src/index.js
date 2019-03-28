@@ -1,31 +1,30 @@
 // JS Goes here - ES6 supported
 
-import './css/main.less';
+import './css/main.less'
 
 // Import a module for its side effects only. This runs module globally
 // without importing any values
-import './js/core/core--events-custom';
-import { _bundle } from './js/core/core--bundles';
+import './js/core/core--events-custom'
+import { _bundle } from './js/core/core--bundles'
 
 // Import Modules
-import { collapsibles } from './js/modules/module--collapsibles';
-import { bp } from './js/modules/module--breakpoints';
-// import { sectionHeight } from './js/modules/module--section-height';
-import { scrollpoints } from './js/modules/module--scrollpoints';
+import { collapsibles } from './js/modules/module--collapsibles'
+import { bp } from './js/modules/module--breakpoints'
+import { sectionHeight } from './js/modules/module--section-height'
+import { scrollpoints } from './js/modules/module--scrollpoints'
 
 // Import Site Specific
-import { smoothScroll } from './js/site/smooth-scroll';
-import { pageHeader } from './js/site/page-header';
-import { menuScroll } from './js/site/menu-scroll';
+import { smoothScroll } from './js/site/smooth-scroll'
+import { pageHeader } from './js/site/page-header'
+import { menuScroll } from './js/site/menu-scroll'
 
 // =============================================================================
 // =============================================================================
 // =============================================================================
 
-const lexkit = function() {
-  $(document).ready(function() {
-    $.event.trigger('on:Ready');
-  });
+let lexkit
+lexkit = function () {
+  $(document).ready(function () { $.event.trigger('on:Ready') })
 
   // =============================================================================
   // Site Specific: Fire Modules
@@ -40,8 +39,8 @@ const lexkit = function() {
     classActive: 'active',
     elementOffset: '#header',
     direction: 'both',
-    debug: false,
-  });
+    debug: false
+  })
 
   scrollpoints({
     scrollpoint: '.scrollpoint--menu-anchor',
@@ -50,23 +49,23 @@ const lexkit = function() {
     // offset: 0,
     debug: false,
     direction: 'down',
-    callbackActivePost() {
-      const _this = this;
-      const sp = $(_this.scrollpoint);
-      sp.css('top', `${$(_this.elementOffset).outerHeight()}px`);
-      $('body').css('padding-top', `${sp.height()}px`);
+    callbackActivePost: function () {
+      let _this = this
+      let sp = $(_this.scrollpoint)
+      sp.css('top', $(_this.elementOffset).outerHeight() + 'px')
+      $('body').css('padding-top', sp.height() + 'px')
     },
-    callbackInactivePost() {
-      const _this = this;
-      const sp = $(_this.scrollpoint);
-      sp.css('top', 'auto');
-      $('body').css('padding-top', '0');
-    },
-  });
+    callbackInactivePost: function () {
+      let _this = this
+      let sp = $(_this.scrollpoint)
+      sp.css('top', 'auto')
+      $('body').css('padding-top', '0')
+    }
+  })
 
   bp.setSettings({
-    breakpointsArray: ['small', 'large', 'widescreen'],
-  });
+    breakpointsArray: ['small', 'large', 'widescreen']
+  })
 
   collapsibles({
     block: '.menu-mobile',
@@ -74,32 +73,34 @@ const lexkit = function() {
     elemContent: '.menu-mobile__content',
     closeOutside: false,
     closeAnyClick: true,
-    callbackOpenPost() {},
-    callbackClosePost() {},
-  });
+    callbackOpenPost: function () {
+    },
+    callbackClosePost: function () {
+    }
+  })
 
-  $('.overlay--toggle').each(function() {
-    const $thisOverlayBlock = $(this)[0];
+  $('.overlay--toggle').each(function () {
+    let $thisOverlayBlock = $(this)[0]
     collapsibles({
       block: $thisOverlayBlock,
       elemToggle: '.overlay__toggle',
       elemContent: '.overlay__content',
       closeOutside: true,
-      closeAnyClick: false,
-    });
-  });
+      closeAnyClick: false
+    })
+  })
 
-  menuScroll();
-  pageHeader();
-  smoothScroll();
+  menuScroll()
+  // pageHeader()
+  smoothScroll()
 
   // =============================================================================
   // Framework Bottom
   // =============================================================================
 
-  _bundle.fire();
-};
+  _bundle.fire()
+}
 
-$(document).ready(function() {
-  window._lxGlobal = lexkit();
-});
+$(document).ready(function () {
+  window._lxGlobal = lexkit()
+})

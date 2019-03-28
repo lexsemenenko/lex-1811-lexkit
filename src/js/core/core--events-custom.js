@@ -7,63 +7,56 @@
 // N milliseconds. If `immediate` is passed, trigger the function on the
 // leading edge, instead of the trailing.
 
-function debounce(func, wait, immediate) {
-  let timeout;
-  return function() {
-    const context = this;
-    const args = arguments;
-    const later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
+function debounce (func, wait, immediate) {
+  let timeout
+  return function () {
+    let context = this; let args = arguments
+    let later = function () {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    let callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
 }
 
 // on:Resize Debounced
-$(window).on(
-  'resize',
-  debounce(function() {
-    $.event.trigger('on:Resize');
-  }, 150)
-);
+$(window).on('resize', debounce(function () {
+  $.event.trigger('on:Resize')
+}, 150))
 
 // on:Scroll Debounced
-$(window).on(
-  'scroll',
-  debounce(function() {
-    $.event.trigger('on:Scroll');
-  }, 100)
-);
+$(window).on('scroll', debounce(function () {
+  $.event.trigger('on:Scroll')
+}, 100));
 
 // on:Scroll Default
-$(window).on('scroll', function() {
-  $.event.trigger('on:ScrollDefault');
+$(window).on('scroll', function () {
+  $.event.trigger('on:ScrollDefault')
 });
 
 // on:ResizeEnd
-(function() {
-  let rtime;
-  let timeout = false;
-  const delta = 200;
+(function () {
+  let rtime
+  let timeout = false
+  let delta = 200
 
-  $(window).resize(function() {
-    rtime = new Date();
+  $(window).resize(function () {
+    rtime = new Date()
     if (timeout === false) {
-      timeout = true;
-      setTimeout(resizeEnd, delta);
+      timeout = true
+      setTimeout(resizeEnd, delta)
     }
-  });
+  })
 
-  function resizeEnd() {
+  function resizeEnd () {
     if (new Date() - rtime < delta) {
-      setTimeout(resizeEnd, delta);
+      setTimeout(resizeEnd, delta)
     } else {
-      timeout = false;
-      $.event.trigger('on:ResizeEnd');
+      timeout = false
+      $.event.trigger('on:ResizeEnd')
     }
   }
-})();
+})()
