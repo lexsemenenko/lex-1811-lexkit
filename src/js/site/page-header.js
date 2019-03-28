@@ -9,7 +9,7 @@ export function pageHeader() {
 
   _bundle._add({
     name: 'Site: PageHeader',
-    event: ['on:Scroll'],
+    event: ['on:ScrollDefault'],
     fn() {
       if ($(window).scrollTop() > pageHeaderHeight) {
         $('#header').addClass('active');
