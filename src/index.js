@@ -54,17 +54,17 @@ function lexkit() {
     callbackActivePost() {
       const _this = this;
       const sp = $(_this.scrollpoint);
-      // sp.css('top', `${$(_this.elementOffset).outerHeight()}px`);
-      // $('body').css('padding-top', `${sp.height()}px`);
+      sp.css('top', `${$(_this.elementOffset).outerHeight()}px`);
+      $('body').css('padding-top', `${sp.height()}px`);
 
-      sp.css('top', '0');
-      sp.css('right', '35px');
+      // sp.css('top', '0');
+      // sp.css('right', '30px');
     },
     callbackInactivePost() {
       const _this = this;
       const sp = $(_this.scrollpoint);
       sp.css('top', '0');
-      sp.css('right', '0');
+      // sp.css('right', '0');
       $('body').css('padding-top', '0');
     },
   });

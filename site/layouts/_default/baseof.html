@@ -20,7 +20,6 @@
           </svg>
         </button>
         <div class="menu-mobile__content" data-collapsible="open: false">
-          {{ partial "menu/menu--main.html" (dict "menu" .Site.Menus.main "currentNode" . "loopCount" 1) }}
           {{ partial "menu/menu--resume.html" (dict "menu" .Site.Menus.resume "currentNode" . "loopCount" 1) }}
         </div>
       </div>

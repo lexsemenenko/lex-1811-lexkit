@@ -1,35 +1,25 @@
 {{ define "hero" }}
-  <div id="about" class="section section--menu section--hero scrollpoint">
+  <div id="about" class="section section--hero scrollpoint">
     <div class="group">
-      <div data-grid="columns: 12, align: middle">
-        <div data-grid-item="width: 6">
-          <div class="hero__content-left">
-            <br><br><br><br><br><br><br>
-            <h1 class="h1 t-blue-dark t-bold">Front-End & Web Developer</h1>
-            <strong class="h2 t-normal">Lex Semenenko</strong>
+      <div class="hero">
+      
+        <div class="hero__text">
+          <h1 class="h1 t-blue-dark t-bold">Front-End & Web Developer</h1>
+          <strong class="h2 t-normal">Lex Semenenko</strong>
+        </div>
+        
+          {{/* <img class="hero__computer" src="/img/kisspng-1.png" alt=""> */}}
+        <div class="hero__menu">
+          <div class="scrollpoint--menu-anchor">
+            <ul class="menu-scroll scrollpoints-watch--menu">
+              <li data-scrollpoint-watch="about"><a href="/#about">Intro</a></li>
+              <li data-scrollpoint-watch="skills"><a href="/#skills">Skills</a></li>
+              <li data-scrollpoint-watch="projects"><a href="/#projects">Projects</a></li>
+              <li data-scrollpoint-watch="contact"><a href="/#contact">Contact</a></li>
+            </ul>
           </div>
         </div>
-        <div data-grid-item="width: 6">
-          <div class="hero__content-right">
-            {{/* <img class="hero__computer" src="/img/kisspng-1.png" alt=""> */}}
-            <br><br><br><br><br><br><br><br>
-            <div class="scrollpoint--menu-anchor">
-              <div class="menu-main">
-                <ul class="menu-main__menu scrollpoints-watch--menu">
-                  <li data-scrollpoint-watch="about" class="menu-main__item"><a href="/#about"
-                      class="menu-main__link">Intro</a></li>
-                  <li data-scrollpoint-watch="skills" class="menu-main__item"><a href="/#skills"
-                      class="menu-main__link">Skills</a></li>
-                  <li data-scrollpoint-watch="projects" class="menu-main__item"><a href="/#projects"
-                      class="menu-main__link">Projects</a></li>
-                  <li data-scrollpoint-watch="contact" class="menu-main__item"><a href="/#contact"
-                      class="menu-main__link">Contact</a></li>
-                </ul>
-              </div>
-            </div>  
 
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -39,7 +29,7 @@
 {{ end }}
 
 {{ define "content" }}
-  <div id="skills" class="section section--menu section--lines  scrollpoint">
+  <div id="skills" class="section section--lines  scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>Skills</span></h2>
       <div data-grid="columns: 12">
@@ -103,7 +93,7 @@
       </div>
     </div>
   </div>
-  <div id="projects" class="section section--menu section--lines section--muted scrollpoint">
+  <div id="projects" class="section section--lines section--muted scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>Projects</span></h2>
       <div data-grid="columns: 12, gutters-row: true" class="project__item">
@@ -135,7 +125,7 @@
       </div>
     </div>
   </div>
-  <div id="contact" class="section section--menu section--lines-dark  scrollpoint">
+  <div id="contact" class="section section--lines-dark  scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>Contact</span></h2>
       <div data-grid="columns: 12">

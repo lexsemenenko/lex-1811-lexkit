@@ -4,14 +4,11 @@ import { _bundle } from '../core/core--bundles';
 // =============================================================================
 
 export function pageHeader() {
-  const pageHeader = $('#header');
-  const pageHeaderHeight = pageHeader.outerHeight();
-
   _bundle._add({
     name: 'Site: PageHeader',
-    event: ['on:Scroll'],
+    event: ['on:ScrollDefault', 'on:Ready'],
     fn() {
-      if ($(window).scrollTop() > pageHeaderHeight) {
+      if ($(window).scrollTop() > $('#header').outerHeight()) {
         $('#header').addClass('active');
       } else {
         $('#header').removeClass('active');
