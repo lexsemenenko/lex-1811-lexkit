@@ -1,24 +1,24 @@
-const webpack = require('webpack')
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const AssetsPlugin = require('assets-webpack-plugin')
-const lessLists = require('less-plugin-lists')
+const webpack = require('webpack');
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
+const LessLists = require('less-plugin-lists');
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, 'src', 'index.js')
+    main: path.join(__dirname, 'src', 'index.js'),
   },
 
   output: {
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
   },
 
   module: {
     rules: [
       {
         test: /\.((png)|(eot)|(woff)|(woff2)|(ttf)|(svg)|(gif))(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?name=/[hash].[ext]'
+        loader: 'file-loader?name=/[hash].[ext]',
       },
 
       { test: /\.json$/, loader: 'json-loader' },
@@ -27,7 +27,7 @@ module.exports = {
         loader: 'babel-loader',
         test: /\.js?$/,
         exclude: /node_modules/,
-        query: { cacheDirectory: true }
+        query: { cacheDirectory: true },
       },
 
       // Webpack will use this loaders for any css files that it finds in the
@@ -36,58 +36,65 @@ module.exports = {
       {
         test: /\.(le|c)ss$/, // For what files are the loaders
         exclude: /node_modules/,
-        use: [{ // What Loaders to use from bottom to top
-          loader: 'style-loader' // creates style nodes from JS strings
-        }, {
-          loader: MiniCssExtractPlugin.loader // Extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
-        }, {
-          loader: 'css-loader' // Second, translates CSS into CommonJS
-        }, {
-          loader: 'postcss-loader'
-        }, {
-          loader: 'less-loader',
-          options: {
-            plugins: [
-              new lessLists()
-            ]
-          }
-        }]
-      }
-    ]
+        use: [
+          {
+            // What Loaders to use from bottom to top
+            loader: 'style-loader', // creates style nodes from JS strings
+          },
+          {
+            loader: MiniCssExtractPlugin.loader, // Extracts CSS into separate files. It creates a CSS file per JS file which contains CSS
+          },
+          {
+            loader: 'css-loader', // Second, translates CSS into CommonJS
+          },
+          {
+            loader: 'postcss-loader',
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              plugins: [new LessLists()],
+              strictMath: true,
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new webpack.ProvidePlugin({
-      fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+      fetch:
+        'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
     }),
 
     new AssetsPlugin({
       filename: 'webpack.json',
       path: path.join(process.cwd(), 'site/data'),
-      prettyPrint: true
+      prettyPrint: true,
     }),
 
     new CopyWebpackPlugin([
       {
         from: './src/fonts/',
         to: 'fonts/',
-        flatten: true
+        flatten: true,
       },
       {
         from: './src/img/',
         to: 'img/',
-        flatten: true
-      }
+        flatten: true,
+      },
     ]),
 
     // Add jQuery
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    })
-  ]
-}
+      'window.jQuery': 'jquery',
+    }),
+  ],
+};
 
 // =============================================================================
 // Notes
