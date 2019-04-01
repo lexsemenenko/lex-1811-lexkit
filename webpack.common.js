@@ -54,7 +54,7 @@ module.exports = {
             loader: 'less-loader',
             options: {
               plugins: [new LessLists()],
-              strictMath: true,
+              strictMath: false,
             },
           },
         ],

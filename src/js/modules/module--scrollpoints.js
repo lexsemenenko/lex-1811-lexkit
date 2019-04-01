@@ -13,12 +13,12 @@ const scrollpoints = function(instanceSettings) {
       callbackActivePre: false,
       callbackActivePost: false,
       callbackInactivePre: false,
-      callbackInactivePost: false,
+      callbackInactivePost: false
     },
     instance: {
-      settings: instanceSettings,
+      settings: instanceSettings
     },
-    public: {},
+    public: {}
   };
 
   let s;
@@ -49,6 +49,7 @@ const scrollpoints = function(instanceSettings) {
       const offset = $(s.elementOffset).outerHeight()
         ? $(s.elementOffset).outerHeight()
         : s.offset;
+
       const spFromTop = $el.offset().top - offset;
       const spHeight = $el.outerHeight();
 
@@ -79,7 +80,7 @@ const scrollpoints = function(instanceSettings) {
               $el.addClass(s.classActive);
               if (s.callbackActivePost) s.callbackActivePost();
             } else {
-              if (s.callbackInactivePre) s.callbackInactivePre();
+              if (s.callbackInactivePre) s.callbmackInactivePre();
               $el.removeClass(s.classActive);
               if (s.callbackInactivePost) s.callbackInactivePost();
             }
@@ -88,7 +89,7 @@ const scrollpoints = function(instanceSettings) {
           if (s.debug) {
             $('.scrollpoint__trigger').css('top', `${trigger}px`);
           }
-        },
+        }
       });
     });
   }
@@ -131,7 +132,7 @@ const scrollpoints = function(instanceSettings) {
     fn() {
       _setBodyClasses();
       watchScrollpoints();
-    },
+    }
   });
   function init() {
     _mergeSettings();

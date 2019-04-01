@@ -13,9 +13,9 @@ import { collapsibles } from './js/modules/module--collapsibles';
 import { bp } from './js/modules/module--breakpoints';
 // import { sectionHeight } from './js/modules/module--section-height';
 import { scrollpoints, test } from './js/modules/module--scrollpoints';
+import { linkAnchors } from './js/modules/module--link-anchors';
 
 // Import Site Specific
-import { smoothScroll } from './js/site/smooth-scroll';
 import { pageHeader } from './js/site/page-header';
 
 // =============================================================================
@@ -27,23 +27,27 @@ function lexkit() {
     $.event.trigger('on:Ready');
   });
 
-  // =============================================================================
-  // Site Specific: Fire Modules
-  // =============================================================================
-
   // sectionHeight.setSettings({
   //   selector: '.section--height'
   // })
 
+  linkAnchors({
+    element: '.menu-scroll a',
+    offsetElement: '#header',
+    offsetNudge: 1
+  });
+
+  // Homepage Sections for sticky menu active classes
   scrollpoints({
     scrollpoint: '.scrollpoint',
     classActive: 'active',
     elementOffset: '#header',
     direction: 'both',
     debug: false,
-    watch: '.scrollpoints-watch--menu',
+    watch: '.scrollpoints-watch--menu'
   });
 
+  // Sticky Functionality for Scrollpoints Menu
   scrollpoints({
     scrollpoint: '.scrollpoint--menu-anchor',
     classActive: 'active',
@@ -54,23 +58,20 @@ function lexkit() {
     callbackActivePost() {
       const _this = this;
       const sp = $(_this.scrollpoint);
-      sp.css('top', `${$(_this.elementOffset).outerHeight()}px`);
-      $('body').css('padding-top', `${sp.height()}px`);
-
-      // sp.css('top', '0');
-      // sp.css('right', '30px');
+      // const height = `${$(_this.elementOffset).outerHeight()}px`;
+      sp.css('top', 0);
+      // $('body').css('padding-top', "87px");
     },
     callbackInactivePost() {
       const _this = this;
       const sp = $(_this.scrollpoint);
       sp.css('top', '0');
-      // sp.css('right', '0');
-      $('body').css('padding-top', '0');
-    },
+      // $('body').css('padding-top', '0');
+    }
   });
 
   bp.setSettings({
-    breakpointsArray: ['small', 'large', 'widescreen'],
+    breakpointsArray: ['small', 'large', 'widescreen']
   });
 
   collapsibles({
@@ -80,7 +81,7 @@ function lexkit() {
     closeOutside: false,
     closeAnyClick: true,
     callbackOpenPost() {},
-    callbackClosePost() {},
+    callbackClosePost() {}
   });
 
   $('.overlay--toggle').each(function() {
@@ -90,12 +91,11 @@ function lexkit() {
       elemToggle: '.overlay__toggle',
       elemContent: '.overlay__content',
       closeOutside: true,
-      closeAnyClick: false,
+      closeAnyClick: false
     });
   });
 
   pageHeader();
-  smoothScroll();
 
   // =============================================================================
   // Framework Bottom
