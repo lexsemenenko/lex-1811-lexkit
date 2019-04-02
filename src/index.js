@@ -29,7 +29,8 @@ function lexkit() {
 
   linkAnchors({
     element: '.menu-scroll a',
-    offsetElement: '#header',
+    offset: 0,
+    // offsetElement: '#header',
     offsetNudge: 1
   });
 
@@ -37,6 +38,7 @@ function lexkit() {
   scrollpoints({
     scrollpoint: '.scrollpoint',
     classActive: 'active',
+    offset: 0,
     elementOffset: '#header',
     direction: 'both',
     debug: false,

@@ -8,6 +8,7 @@ export const linkAnchors = function(instanceSettings) {
   const root = {
     settings: {
       element: null,
+      offset: 0,
       offsetElement: null,
       offsetNudge: 0
     },
@@ -19,6 +20,7 @@ export const linkAnchors = function(instanceSettings) {
 
   let s;
   let element;
+  let offset;
   let offsetElement;
   let offsetNudge;
   let $offsetElement;
@@ -29,7 +31,7 @@ export const linkAnchors = function(instanceSettings) {
   }
 
   function _cacheSelections() {
-    ({ element, offsetElement, offsetNudge } = s);
+    ({ element, offset, offsetElement, offsetNudge } = s);
     $element = $(element);
     $offsetElement = $(offsetElement);
   }
@@ -39,7 +41,10 @@ export const linkAnchors = function(instanceSettings) {
       if (this.hash !== '') {
         e.preventDefault();
         const { hash } = this;
-        const elOffset = $offsetElement.outerHeight();
+        const elOffset = $offsetElement.outerHeight()
+          ? $offsetElement.outerHeight()
+          : s.offset;
+
         $('html,body').animate(
           {
             scrollTop: $(hash).offset().top - elOffset + offsetNudge
