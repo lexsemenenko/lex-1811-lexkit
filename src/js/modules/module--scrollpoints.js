@@ -42,7 +42,7 @@ const scrollpoints = function(instanceSettings) {
     $('body').append(debugTrigger);
   }
 
-  function _checkScrollpoint() {
+  function _checkScrollpoint(callback) {
     // let vhHeight = window.innerHeight
     scrollpoint.each(function(index, el) {
       const $el = $(el);
@@ -55,7 +55,7 @@ const scrollpoints = function(instanceSettings) {
 
       _bundle._add({
         name: 'In Module: Scrollpoints Inside .each',
-        event: ['on:ScrollDefault'],
+        event: ['on:ScrollDefault', 'on:Ready'],
         fn() {
           const amountScrolled = window.pageYOffset;
           const trigger = amountScrolled + offset;
@@ -89,17 +89,20 @@ const scrollpoints = function(instanceSettings) {
           if (s.debug) {
             $('.scrollpoint__trigger').css('top', `${trigger}px`);
           }
+
+          if (typeof callback === 'function') callback($el);
         }
       });
     });
   }
-
-  // Check for anyelement watching the points
-
-  function watchScrollpoints() {
+  // Check for an element watching the points.
+  // It's CALLBACK as it needs to run
+  // after scrollpoint ran so it sets up correct classes on the watch element
+  function watchScrollpoints(sp) {
     $watch.find('[data-scrollpoint-watch]').each(function() {
-      const el = $(this);
-      const watchPointName = el.data('scrollpoint-watch');
+      const $sp = sp;
+      const $el = $(this);
+      const watchPointName = $el.data('scrollpoint-watch');
       const $spItem = $(`#${watchPointName}`);
       const currentWatchItem = $(`a[href*=${watchPointName}]`);
       if ($spItem.hasClass(classActive)) {
@@ -131,13 +134,13 @@ const scrollpoints = function(instanceSettings) {
     event: ['on:Scroll'],
     fn() {
       _setBodyClasses();
-      watchScrollpoints();
     }
   });
+
   function init() {
     _mergeSettings();
     _cacheSelections();
-    _checkScrollpoint();
+    _checkScrollpoint(watchScrollpoints);
     _debugVisually();
   }
 

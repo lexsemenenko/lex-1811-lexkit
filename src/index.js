@@ -31,7 +31,7 @@ function lexkit() {
     element: '.menu-scroll a',
     offset: 0,
     // offsetElement: '#header',
-    offsetNudge: 1
+    offsetNudge: 0
   });
 
   // Homepage Sections for sticky menu active classes
