@@ -8,14 +8,16 @@
 
 #CALC() {
   .em(@font-size, @size-to-compare) {
-    & when (ispixel(@size-to-compare) = true) {
+    & when (ispixel(@size-to-compare)=true) {
       return: unit((@size-to-compare / @font-size), em);
     }
-    & when (isem(@size-to-compare) = true) {
+
+    & when (isem(@size-to-compare)=true) {
       return: @size-to-compare;
     }
   }
-  .rem(@font-size) when (ispixel(@font-size) = true) {
+
+  .rem(@font-size) when (ispixel(@font-size)=true) {
     return: unit((@font-size / @t-base), rem);
   }
 }

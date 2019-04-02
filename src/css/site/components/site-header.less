@@ -8,33 +8,41 @@
   padding-top: 20px;
   padding-bottom: 20px;
   transition: all @header-transition-duration @header-transition-timing;
+
   &__logo {
     // margin: 0 auto;
     width: (423px / 5px);
+
     //height: 198px / @logo-size-multiplier;
     svg path {
       fill: @color-blue;
     }
+
     transition: all @header-transition-duration @header-transition-timing;
   }
+
   position: fixed;
   z-index: 100;
   top: 0;
   width: 100%;
   transition: all @header-transition-duration @header-transition-timing;
+
   .menu-main {
     opacity: 0;
     transition: opacity @header-transition-duration @header-transition-timing;
   }
+
   &.active {
     padding-top: 10px;
     padding-bottom: 10px;
     background: white;
     transition: all @header-transition-duration @header-transition-timing;
+
     .menu-main {
       opacity: 1;
       transition: all @header-transition-duration @header-transition-timing;
     }
+
     .header__logo {
       width: (423px / 6px);
       //height: 198px / 6;

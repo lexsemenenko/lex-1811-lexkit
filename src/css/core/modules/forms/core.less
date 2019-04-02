@@ -24,7 +24,11 @@ Core Forms: General
 // Form Reset
 // =====================================
 
-fieldset, form, label, legend, input {
+fieldset,
+form,
+label,
+legend,
+input {
   margin: 0;
   padding: 0;
   border: 0;
@@ -49,10 +53,8 @@ fieldset {
 }
 
 label {
-  #TYPE.create(
-    @size: @t-small,
-    @lh: 0.9em
-  );
+  #TYPE.create(@size: @t-small,
+  @lh: 0.9em);
   color: @form-label-color;
   display: block;
   margin-bottom: @form-label-margin;
@@ -73,21 +75,19 @@ input[type="email"],
 input[type="month"],
 input[type="week"],
 input[type="color"] {
-  #FORM.input-text(
-    @height: @form-element-height,
-    @bg-color: @form-element-bg-color,
-    @font-color: @t-base-color,
-    @font-size: @t-base,
-    @border-width: 1px,
-    @border-color: @form-brd-color,
-    @border-radius: @form-element-radius,
-    @width: 100%
-  );
+  #FORM.input-text(@height: @form-element-height,
+  @bg-color: @form-element-bg-color,
+  @font-color: @t-base-color,
+  @font-size: @t-base,
+  @border-width: 1px,
+  @border-color: @form-brd-color,
+  @border-radius: @form-element-radius,
+  @width: 100%);
 }
 
 // Note:            Checkbox label should come right after checkbox input
 
-input[type="checkbox"] when (@toggle-boolean-fancy = on) {
+input[type="checkbox"] when (@toggle-boolean-fancy =on) {
   //.mix-input-boolean--fancy(
   //  @size: @form-radio-checkbox-size,
   //  @icon-color: @form-radio-checkbox-icon-color,
@@ -100,11 +100,11 @@ input[type="checkbox"] when (@toggle-boolean-fancy = on) {
   //);
 }
 
-input[type="checkbox"] when not (@toggle-boolean-fancy = on) {
+input[type="checkbox"] when not (@toggle-boolean-fancy =on) {
   //.mix-input-boolean--plain();
 }
 
-input[type="radio"] when (@toggle-boolean-fancy = on) {
+input[type="radio"] when (@toggle-boolean-fancy =on) {
   //.mix-input-boolean--fancy(
   //  @size: @form-radio-checkbox-size,
   //  @icon-color: @form-radio-checkbox-icon-color,
@@ -117,7 +117,7 @@ input[type="radio"] when (@toggle-boolean-fancy = on) {
   //);
 }
 
-input[type="radio"] when not (@toggle-boolean-fancy = on) {
+input[type="radio"] when not (@toggle-boolean-fancy =on) {
   //.mix-input-boolean--plain();
 }
 
@@ -137,16 +137,11 @@ input[type="file"] {
   //);
 }
 
-input[type="submit"],
-input[type="button"],
-input[type="reset"] {
-}
-
-input[type="color"] {
-}
-
-input[type="range"] {
-}
+// input[type="submit"],
+// input[type="button"],
+// input[type="reset"] {}
+// input[type="color"] {}
+// input[type="range"] {}
 
 input,
 textarea {
@@ -155,20 +150,18 @@ textarea {
 }
 
 textarea {
-  #FORM.input-text(
-    @height: 150px,
-    @bg-color: @form-element-bg-color,
-    @font-color: @t-base-color,
-    @font-size: @t-base,
-    @border-width: 1px,
-    @border-color: @form-brd-color,
-    @border-radius: @form-element-radius,
-    @width: 100%
-  );
+  #FORM.input-text(@height: 150px,
+  @bg-color: @form-element-bg-color,
+  @font-color: @t-base-color,
+  @font-size: @t-base,
+  @border-width: 1px,
+  @border-color: @form-brd-color,
+  @border-radius: @form-element-radius,
+  @width: 100%);
 }
 
 fieldset {
-  & + & {
+  &+& {
     margin-top: @form-item-margin-vertical;
   }
 }
@@ -177,8 +170,7 @@ legend {
   //#TYPE.create(@t-large, @t-large-lh);
 }
 
-select {
-}
+select {}
 
 
 // Classes
@@ -189,10 +181,11 @@ select {
 
 .form-item {
   margin-bottom: @form-item-margin-vertical;
+
   // & + &,
   // legend + &,
   // p + &
-  * + & {
+  *+& {
     margin-top: @form-item-margin-vertical;
   }
 
@@ -202,12 +195,15 @@ select {
   &--large {
     max-width: @form-item--size-large;
   }
+
   &--med {
     max-width: @form-item--size-med;
   }
+
   &--small {
     max-width: @form-item--size-small;
   }
+
   &--small-x {
     max-width: @form-item--size-small-x;
   }
@@ -215,12 +211,13 @@ select {
   // MOD: Types
   // -------------------------------------
 
-  &--file when (@toggle-input-file-fancy = on) {
-    > input[type="file"] {
+  &--file when (@toggle-input-file-fancy =on) {
+    >input[type="file"] {
       .hide-v();
     }
+
     // Make label to look like input
-    > label {
+    >label {
       //.btn;
       cursor: pointer;
     }
@@ -232,11 +229,10 @@ select {
   // Note:            These are inputs of toggle types. You can use a hook to
   //                  display them inline
 
-  &__toggle {
-  }
+  &__toggle {}
 }
 
-.select-list--icon when (@toggle-select-fancy = on) {
+.select-list--icon when (@toggle-select-fancy =on) {
   //.mix-select(
   //  @icon-size: 140%
   //)

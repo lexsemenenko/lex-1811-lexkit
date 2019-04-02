@@ -11,12 +11,8 @@ import { _bundle } from './js/core/core--bundles';
 // Import Modules
 import { collapsibles } from './js/modules/module--collapsibles';
 import { bp } from './js/modules/module--breakpoints';
-// import { sectionHeight } from './js/modules/module--section-height';
 import { scrollpoints, test } from './js/modules/module--scrollpoints';
 import { linkAnchors } from './js/modules/module--link-anchors';
-
-// Import Site Specific
-import { pageHeader } from './js/site/page-header';
 
 // =============================================================================
 // =============================================================================
@@ -60,13 +56,13 @@ function lexkit() {
       const sp = $(_this.scrollpoint);
       // const height = `${$(_this.elementOffset).outerHeight()}px`;
       sp.css('top', 0);
-      // $('body').css('padding-top', "87px");
+      $('#header').addClass('active');
     },
     callbackInactivePost() {
       const _this = this;
       const sp = $(_this.scrollpoint);
       sp.css('top', '0');
-      // $('body').css('padding-top', '0');
+      $('#header').removeClass('active');
     }
   });
 
@@ -94,8 +90,6 @@ function lexkit() {
       closeAnyClick: false
     });
   });
-
-  pageHeader();
 
   // =============================================================================
   // Framework Bottom

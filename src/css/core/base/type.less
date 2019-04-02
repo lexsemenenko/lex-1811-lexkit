@@ -8,18 +8,18 @@ Changes:            1.0.0 | ...
 
 */
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
-h6, 
-ul, 
-ol, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
 li,
-pre, 
+pre,
 code,
-p { 
+p {
   margin: 0;
   padding: 0;
   font-size: inherit;
@@ -28,47 +28,92 @@ p {
   border-style: solid;
   font-weight: inherit;
 }
+
 p {
   margin-bottom: @t-base-lh * @t-margin-multiplier;
 }
-sub, sup {
+
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
-small { 
-  #TYPE.createSize("small", true); 
+
+small {
+  #TYPE.createSize("small", true);
 }
-sub { 
-  bottom: -0.25em; 
+
+sub {
+  bottom: -0.25em;
 }
-sup { 
-  top: -0.5em; 
+
+sup {
+  top: -0.5em;
 }
-b, 
-strong { 
-  font-weight: bold; 
+
+b,
+strong {
+  font-weight: bold;
 }
 
 .mix-bottom-stylesheet() {
 
-  .t-light    { font-weight: 300; }
-  .t-normal   { font-weight: normal; }
-  .t-semibold { font-weight: 600; }
-  .t-italic   { font-style: italic; } // When not using <em>
-  .t-bold     { font-weight: bold; } // When not using <strong>
-  .t-center   { text-align: center; }
-  .t-left     { text-align: left; }
-  .t-right    { text-align: right; }
-  .t-upper    { text-transform: uppercase; }
-  .t-lower    { text-transform: lowercase; }
-  .t-title    { text-transform: capitalize; }
-  .t-detail   { color: @t-detail; }
+  .t-light {
+    font-weight: 300;
+  }
+
+  .t-normal {
+    font-weight: normal;
+  }
+
+  .t-semibold {
+    font-weight: 600;
+  }
+
+  .t-italic {
+    font-style: italic;
+  }
+
+  // When not using <em>
+  .t-bold {
+    font-weight: bold;
+  }
+
+  // When not using <strong>
+  .t-center {
+    text-align: center;
+  }
+
+  .t-left {
+    text-align: left;
+  }
+
+  .t-right {
+    text-align: right;
+  }
+
+  .t-upper {
+    text-transform: uppercase;
+  }
+
+  .t-lower {
+    text-transform: lowercase;
+  }
+
+  .t-title {
+    text-transform: capitalize;
+  }
+
+  .t-detail {
+    color: @t-detail;
+  }
 
   .breakwords {
     #TYPE.breakWord();
   }
+
   .breakwords-all {
     #TYPE.breakAll();
   }

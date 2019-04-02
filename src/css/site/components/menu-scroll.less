@@ -1,9 +1,11 @@
 .menu-scroll {
   display: flex;
   justify-content: flex-start;
-  > li {
-  // outline: 1px solid palevioletred;  
+
+  >li {
+    // outline: 1px solid palevioletred;  
   }
+
   a {
     padding: 0.7em 1em;
     display: inline-block;
@@ -12,6 +14,7 @@
     color: @color-blue-dark;
     font-weight: 600;
     font-size: 20px;
+
     &:before {
       content: '';
       display: block;
@@ -21,16 +24,17 @@
       height: 8px;
       background-color: transparent;
       transition: 0.3s ease-out;
-      transition-property: background-color,border-color,box-shadow,height, right;
+      transition-property: background-color, border-color, box-shadow, height, right;
       left: 0.9em;
       right: 0.9em;
       // right: calc(102% - 14px);
       // right: 100%;
     }
+
     &.active {
       &::before {
         // right: 14px;
-        transition-property: background-color,border-color,box-shadow,height, right;
+        transition-property: background-color, border-color, box-shadow, height, right;
         background-color: darken(#e1f0fb, 7%);
       }
     }
@@ -40,6 +44,7 @@
 .scrollpoint--menu-anchor {
   z-index: 150;
   position: relative;
+
   &.active {
     position: fixed;
     z-index: 200;
@@ -56,18 +61,18 @@
 // .menu-main__menu,
 // .menu-resume__menu {
 //   a {
-    // color: @color-blue-dark;
-    // // text-transform: uppercase;
-    // font-weight: 600;
-    // // letter-spacing: 0.05em;
-    // font-size: 18px;
+// color: @color-blue-dark;
+// // text-transform: uppercase;
+// font-weight: 600;
+// // letter-spacing: 0.05em;
+// font-size: 18px;
 
-    // @media @break-primary {
-    //   font-size: 14px;
-    // }
-    // @media @break-primary-up {
-  
-    // }
+// @media @break-primary {
+//   font-size: 14px;
+// }
+// @media @break-primary-up {
+
+// }
 //   }
 // }
 
@@ -90,9 +95,13 @@
 .menu-mobile {
   display: none;
 
-  @media @break-primary-up { display: none; }
+  @media @break-primary-up {
+    display: none;
+  }
+
   position: relative;
 }
+
 // .menu-mobile__toggle {
 //   float: right;
 // }

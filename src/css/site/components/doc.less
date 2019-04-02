@@ -1,51 +1,53 @@
 .doc {
   background-color: white;
-  box-shadow: 0 1px 3px 1px rgba(60,64,67,.15);
+  box-shadow: 0 1px 3px 1px rgba(60, 64, 67, .15);
   margin-top: 0.6em;
   margin-bottom: 2em;
   min-height: 1056px;
   padding: 1em 1em;
+
   @media @tablet-up {
     padding: 43px 4px 43px 47px;
   }
+
   @media @desktop-up {
     margin-top: 1.6em;
     padding: 86px 86px 86px 96px;
   }
 }
 
-@logo-size-multiplier:                  5;
+@logo-size-multiplier: 5;
 
 .doc-header {
   span {
     display: block;
   }
+
   &__logo {
     margin-top: 0.4em;
     width: 423px / @logo-size-multiplier;
     height: 198px / @logo-size-multiplier;
     float: left;
     margin-right: 0.5em;
+
     svg path {
       fill: #0da1ec;
     }
   }
+
   &__name {
     font-weight: 600;
     color: #09143b;
-    #TYPE.create(
-      @size: 28px, 
-      @lh: 1.15em, 
-      @margin: false
-    );
+    #TYPE.create(@size: 28px,
+    @lh: 1.15em,
+    @margin: false);
   }
+
   &__title {
     color: #09143b;
     font-size: 16px;
-    #TYPE.create(
-      @size: 16px, 
-      @lh: 1em, 
-      @margin: false
-    );
+    #TYPE.create(@size: 16px,
+    @lh: 1em,
+    @margin: false);
   }
 }

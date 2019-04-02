@@ -1,4 +1,3 @@
-
 // Changelog:       V1.0.1 = Added extra parameters to the button colors mixin,
 //                    Added btn-full class. 
 //                  V1.0.2 = Added extra parameters to the button colors mixin,
@@ -36,8 +35,8 @@
 
 .mix-btn--defaults() {
   -webkit-appearance: none;
-  -moz-appearance: none;   
-  appearance: none;        
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
   display: inline-block;
   text-align: center;
@@ -46,20 +45,16 @@
 }
 
 
-.mix-btn(
-
-  @height, 
-  @bg-color, 
-  @font-color: white, 
-  @brd-radius: 0, 
-  @brd-size: 0, 
-  @brd-color: transparent, 
-  @font-size: inherit, 
-  @hover--font-color: @font-color,
-  @hover--bg-color: darken(@bg-color, @btn-hover-bg-amount),
-  @hover--brd-color: darken(@brd-color, @btn-hover-brd-amount)
-
-) {
+.mix-btn(@height,
+@bg-color,
+@font-color: white,
+@brd-radius: 0,
+@brd-size: 0,
+@brd-color: transparent,
+@font-size: inherit,
+@hover--font-color: @font-color,
+@hover--bg-color: darken(@bg-color, @btn-hover-bg-amount),
+@hover--brd-color: darken(@brd-color, @btn-hover-brd-amount)) {
 
   .mix-btn--defaults();
   .mix-text(@font-size);
@@ -72,7 +67,7 @@
   border-color: @brd-color;
   background-color: @bg-color;
 
-  & when not (@btn-gradient = off) {
+  & when not (@btn-gradient =off) {
     .mix-gradient-v(lighten(@bg-color, @btn-gradient-amount), darken(@bg-color, @btn-gradient-amount));
   }
 
@@ -81,18 +76,22 @@
     background-color: @bg-color;
     color: @font-color;
     border-color: @brd-color;
-    & when not (@btn-gradient = off) {
+
+    & when not (@btn-gradient =off) {
       .mix-gradient-v(lighten(@bg-color, @btn-gradient-amount), darken(@bg-color, @btn-gradient-amount));
     }
   }
+
   &:hover {
     background-color: @hover--bg-color;
     color: @hover--font-color;
     border-color: @hover--brd-color;
-    & when not (@btn-gradient = off) {
+
+    & when not (@btn-gradient =off) {
       .mix-gradient-v(lighten(@hover--bg-color, @btn-gradient-amount), darken(@hover--bg-color, @btn-gradient-amount));
     }
   }
+
   .hook--mix-btn();
 }
 
@@ -104,38 +103,41 @@
 // Solid color button
 // =====================================
 
-.mix-btn-color(
-  @class-name, 
-  @bg-color, 
-  @font-color: white, 
-  @brd-color: transparent, 
-  @btn-gradient: @btn-gradient,
-  @brd-width: @btn-brd-width,  
-  @hover--font-color: @font-color,
-  @hover--brd-color: darken(@brd-color, @btn-hover-brd-amount),
-  @hover--bg-color: darken(@bg-color, @btn-hover-bg-amount)
-  ) when (@btn-gradient = off) {
+.mix-btn-color(@class-name,
+@bg-color,
+@font-color: white,
+@brd-color: transparent,
+@btn-gradient: @btn-gradient,
+@brd-width: @btn-brd-width,
+@hover--font-color: @font-color,
+@hover--brd-color: darken(@brd-color, @btn-hover-brd-amount),
+@hover--bg-color: darken(@bg-color, @btn-hover-bg-amount)) when (@btn-gradient =off) {
   .btn-@{class-name} {
     background-color: @bg-color;
     border-color: @brd-color;
     border-width: @brd-width;
     color: @font-color;
-    & when not (@btn-gradient = off) {
+
+    & when not (@btn-gradient =off) {
       .mix-gradient-v(lighten(@bg-color, @btn-gradient-amount), darken(@bg-color, @btn-gradient-amount));
     }
+
     &:visited {
       background-color: @bg-color;
       color: @font-color;
       border-color: @brd-color;
-      & when not (@btn-gradient = off) {
+
+      & when not (@btn-gradient =off) {
         .mix-gradient-v(lighten(@bg-color, @btn-gradient-amount), darken(@bg-color, @btn-gradient-amount));
       }
     }
+
     &:hover {
       background-color: @hover--bg-color;
       color: @hover--font-color;
       border-color: @hover--brd-color;
-      & when not (@btn-gradient = off) {
+
+      & when not (@btn-gradient =off) {
         .mix-gradient-v(lighten(@hover--bg-color, @btn-gradient-amount), darken(@hover--bg-color, @btn-gradient-amount));
       }
     }
@@ -145,12 +147,10 @@
 // Mixin Size
 // =============================================================================
 
-.mix-btn-size(
-  @class-name, 
-  @height, 
-  @font-size, 
-  @proportion: @btn-proportion
-  ) {
+.mix-btn-size(@class-name,
+@height,
+@font-size,
+@proportion: @btn-proportion ) {
   .btn-@{class-name} {
     .mix-text(@font-size);
     padding: @height @height*@proportion;
@@ -168,6 +168,7 @@
     position: relative;
     padding: 0;
     display: inline-block;
+
     &:before {
       .i-defaults;
       line-height: @height;
@@ -194,7 +195,9 @@
 .btn-disabled {
   cursor: default;
   .hook--btn-disabled();
-  &:hover, &:visited {
+
+  &:hover,
+  &:visited {
     background-color: @btn-bg;
     border-color: @btn-brd-color;
   }
@@ -208,15 +211,19 @@
   border-width: 0;
   color: @a-color;
   .mix-shadow-none();
-  &:hover, &:visited {
+
+  &:hover,
+  &:visited {
     background-color: transparent;
     background-image: none;
     border-width: 0;
     .mix-shadow-none();
   }
+
   &:visited {
     color: @a-color;
   }
+
   &:hover {
     color: @a-color-hover;
   }
@@ -236,10 +243,14 @@
 .btn-inside {
   &:extend(.btn all);
   padding: 0;
-  input, a, button {
+
+  input,
+  a,
+  button {
     display: block;
     padding: @btn-height @btn-height*@btn-proportion;
   }
+
   .hook--btn-inside();
 }
 
@@ -258,21 +269,30 @@
   font-size: 0.001px;
   // Prevent buttons from wrapping
   white-space: nowrap;
+
   >.btn {
     &:hover {
       position: relative;
       z-index: 2;
     }
+
     &:first-child {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
+
     &:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    &:not(:first-child):not(:last-child) { border-radius: 0; }
-    &:nth-child(n+2) { margin-left: -@btn-brd-width; }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:nth-child(n+2) {
+      margin-left: -@btn-brd-width;
+    }
   }
 }
 
@@ -283,9 +303,24 @@
   >.btn {
     display: block;
     margin-top: -1px;
-    &:first-child { border-bottom-left-radius: 0; border-bottom-right-radius: 0;}
-    &:last-child { border-top-left-radius: 0; border-top-right-radius: 0;}
-    &:not(:first-child):not(:last-child) { border-radius: 0; }
-    &:hover {z-index: 2; position: relative;}
+
+    &:first-child {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:hover {
+      z-index: 2;
+      position: relative;
+    }
   }
 }

@@ -10,7 +10,8 @@ Changes:            1.0.0 | ...
 
 // Note these are added to the bottom of the style sheet.
 
-.cf { 
+.cf {
+
   &:before,
   &:after {
     content: "";
@@ -19,9 +20,14 @@ Changes:            1.0.0 | ...
     flex-basis: 0;
     order: 1;
   }
-  &:after { clear: both; }
+
+  &:after {
+    clear: both;
+  }
+
   *zoom: 1;
 }
+
 .hide-v() {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -31,6 +37,7 @@ Changes:            1.0.0 | ...
   padding: 0;
   position: absolute;
   width: 1px;
+
   &.focusable:active,
   &.focusable:focus {
     clip: auto;
@@ -41,6 +48,7 @@ Changes:            1.0.0 | ...
     width: auto;
   }
 }
+
 .hide-v {
   .hide-v();
 }
@@ -51,6 +59,7 @@ Changes:            1.0.0 | ...
   overflow: hidden;
   display: block;
 }
+
 .unhide-text {
   text-indent: 0;
   white-space: normal;
@@ -62,19 +71,23 @@ Changes:            1.0.0 | ...
   left: -10000px;
   top: -10000px;
 }
+
 .hidden-abs-no {
   position: static;
   left: auto;
   top: auto;
 }
+
 .no-select {
   user-select: none;
   pointer-events: none;
   cursor: pointer;
 }
-.no-scroll-y { 
-  overflow-y: hidden; 
+
+.no-scroll-y {
+  overflow-y: hidden;
 }
-.no-scroll-x { 
-  overflow-x: hidden; 
+
+.no-scroll-x {
+  overflow-x: hidden;
 }

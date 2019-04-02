@@ -1,14 +1,16 @@
-@section-base-padding-v:      @base-large*3;
+@section-base-padding-v: @base-large*3;
 
 
 @section-base: {
   padding-top: @section-base-padding-v;
   padding-bottom: @section-base-padding-v;
 }
+
 @section-small: {
   padding-top: @base-large;
   padding-bottom: @base-large;
 }
+
 @section-large: {
   padding-top: @base-large-xx * 2;
   padding-bottom: @base-large-xx * 2;
@@ -16,7 +18,7 @@
 
 @section-hero-bg: {
   background: linear-gradient(120deg, lighten(#e1f0fb, 2%) 50%, lighten(#e1f0fb, 0%) 50%);
-} 
+}
 
 .section--hero {
   // @section-large();
@@ -31,6 +33,7 @@
   background-position-x: 50%;
   background-repeat: repeat-y;
 }
+
 .section--lines-dark {
   @section-base();
   background: #1d1e22;
@@ -38,19 +41,24 @@
   background-position-x: 50%;
   background-repeat: repeat-y;
 
-  color: rgba(255,255,255,.6);
-  h2, h3 {
+  color: rgba(255, 255, 255, .6);
+
+  h2,
+  h3 {
     color: white;
+
     &:after {
       // background: lighten(@color-blue, 112%);
       opacity: 0.2;
     }
   }
 }
+
 .section--content {
   @section-small();
   background: #ffffff;
 }
+
 .section--muted {
   background-color: #f8f8f8;
 }
@@ -58,7 +66,9 @@
 .section--page-title {
   @section-small();
   background-color: lighten(#e1f0fb, 2%);
-  h1, h2 {
+
+  h1,
+  h2 {
     .t-semibold;
     margin-bottom: 0;
   }

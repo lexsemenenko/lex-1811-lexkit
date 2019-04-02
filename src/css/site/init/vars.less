@@ -1,7 +1,6 @@
-
-@t-base:                      16px;
-@t-base-lh:                   1.6em;
-@t-base-color:                #09143b;
+@t-base: 16px;
+@t-base-lh: 1.6em;
+@t-base-color: #09143b;
 
 // @t-large-xx:                  55px;
 // @t-large-xx-lh:               @t-base-lh;
@@ -16,41 +15,34 @@
 
 
 
-@color-blue:                            #0da1ec;
-@color-blue-dark:                       #09143b;
+@color-blue: #0da1ec;
+@color-blue-dark: #09143b;
 
 
 
-#COLOR.set(
-  @color-bg: F, 
-  @color-border: F, 
-  @color-text: T, 
-  @color-icon: F, 
-  @color-name: -blue, 
-  @color-value: @color-blue
+#COLOR.set(@color-bg: F,
+@color-border: F,
+@color-text: T,
+@color-icon: F,
+@color-name: -blue,
+@color-value: @color-blue);
+
+#COLOR.set(@color-bg: F,
+@color-border: F,
+@color-text: T,
+@color-icon: F,
+@color-name: -blue-dark,
+@color-value: @color-blue-dark);
+
+#JS.breakpoint(@element: 'body',
+@breakpoint: ~"screen",
+@content: 'widescreen'
 );
-
-#COLOR.set(
-  @color-bg: F, 
-  @color-border: F, 
-  @color-text: T, 
-  @color-icon: F, 
-  @color-name: -blue-dark, 
-  @color-value: @color-blue-dark
+#JS.breakpoint(@element: 'body',
+@breakpoint: @desktop,
+@content: 'large'
 );
-
- #JS.breakpoint(
-   @element: 'body',
-   @breakpoint: ~"screen",
-   @content: 'widescreen'
- );
-#JS.breakpoint(
-  @element: 'body',
-  @breakpoint: @desktop,
-  @content: 'large'
-);
-#JS.breakpoint(
-  @element: 'body',
-  @breakpoint: @break-primary,
-  @content: 'small'
+#JS.breakpoint(@element: 'body',
+@breakpoint: @break-primary,
+@content: 'small'
 );

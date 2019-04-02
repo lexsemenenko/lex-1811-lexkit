@@ -1,4 +1,3 @@
-
 // =============================================================================
 // Mixins: Type
 // =============================================================================
@@ -9,17 +8,17 @@
 
 #ELEMENT() {
 
-  .links(
-    @color: @a-color, 
-    @hover: @a-color-hover, 
-    @visited: @a-color-visited
-  ) {
+  .links(@color: @a-color,
+  @hover: @a-color-hover,
+  @visited: @a-color-visited ) {
     color: @color;
-    &:visited when not (@visited = off) and not (@visited = false)  { 
-      color: @visited; 
+
+    &:visited when not (@visited =off) and not (@visited =false) {
+      color: @visited;
     }
-    &:hover { 
-      color: @hover; 
+
+    &:hover {
+      color: @hover;
     }
   }
 
@@ -36,5 +35,5 @@
     appearance: none;
     color: inherit;
   }
-  
+
 }
