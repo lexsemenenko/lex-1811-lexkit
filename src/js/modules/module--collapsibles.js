@@ -1,6 +1,6 @@
-//= =============================================================================
+// =============================================================================
 // Module: collapsibles
-//= =============================================================================
+// =============================================================================
 
 const collapsibles = function(instanceSettings) {
   const root = {
@@ -17,14 +17,14 @@ const collapsibles = function(instanceSettings) {
       callbackClosePost: false,
       callbackDestroyPost: false,
       closeOutside: false,
-      closeAnyClick: false,
+      closeAnyClick: false
     },
     public: {
-      setName,
+      setName
     },
     instance: {
-      settings: instanceSettings,
-    },
+      settings: instanceSettings
+    }
   };
 
   let s;

@@ -42,6 +42,23 @@ const scrollpoints = function(instanceSettings) {
     $('body').append(debugTrigger);
   }
 
+  // Check for an element watching the points.
+  // It's CALLBACK as it needs to run
+  // after scrollpoint ran so it sets up correct classes on the watch element
+  const watchScrollpoints = () => {
+    $watch.find('[data-scrollpoint-watch]').each(function() {
+      const $el = $(this);
+      const watchPointName = $el.data('scrollpoint-watch');
+      const $spItem = $(`#${watchPointName}`);
+      const currentWatchItem = $(`a[href*=${watchPointName}]`);
+      if ($spItem.hasClass(classActive)) {
+        currentWatchItem.addClass(classActive);
+      } else {
+        currentWatchItem.removeClass(classActive);
+      }
+    });
+  };
+
   function _checkScrollpoint(callback) {
     // let vhHeight = window.innerHeight
     scrollpoint.each(function(index, el) {
@@ -95,23 +112,6 @@ const scrollpoints = function(instanceSettings) {
       });
     });
   }
-  // Check for an element watching the points.
-  // It's CALLBACK as it needs to run
-  // after scrollpoint ran so it sets up correct classes on the watch element
-  function watchScrollpoints(sp) {
-    $watch.find('[data-scrollpoint-watch]').each(function() {
-      const $sp = sp;
-      const $el = $(this);
-      const watchPointName = $el.data('scrollpoint-watch');
-      const $spItem = $(`#${watchPointName}`);
-      const currentWatchItem = $(`a[href*=${watchPointName}]`);
-      if ($spItem.hasClass(classActive)) {
-        currentWatchItem.addClass(classActive);
-      } else {
-        currentWatchItem.removeClass(classActive);
-      }
-    });
-  }
 
   let scrollPosition = $(window).scrollTop();
   function _setBodyClasses() {
@@ -137,12 +137,12 @@ const scrollpoints = function(instanceSettings) {
     }
   });
 
-  function init() {
+  const init = () => {
     _mergeSettings();
     _cacheSelections();
     _checkScrollpoint(watchScrollpoints);
     _debugVisually();
-  }
+  };
 
   init();
 
