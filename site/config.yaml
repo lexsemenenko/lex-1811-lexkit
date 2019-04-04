@@ -1,26 +1,21 @@
 title: Lex Semenenko
 subTitle: Front-End & Web Developer
 
-#Debugging
+# Debugging
 log: false
-# logFile: 'hugo-debug.log'
 verbose: false
 verboseLog: false
 uglyURLs: false # make simple HTML files not directories
 
-#=====================================
-
-#for Local
+# for Local
 # baseURL: ""
 # RelativeURLs: true # rewrite to relative to root of content
 # canonifyURLs: false # switch to true to prefix URLs with baseURL
 
-#For Package
+# For Package
 baseURL: "/"
 RelativeURLs: false # rewrite to relative to root of content
 canonifyURLs: true # switch to true to prefix URLs with baseURL
-
-#=====================================
 
 # Defualt Outputs
 disableKinds: ["RSS", "404", "sitemap", "robotsTXT","taxonomy", "taxonomyTerm"]
@@ -52,21 +47,9 @@ Params:
     images: "/images/"
     files: "/files/"
 
-# =============================================================================
 # Menu
-# =============================================================================
-
 menu:
-  # Main
-  # =============================================================================
-
-  # Resume
-  # =============================================================================
-
   resume:
-
-    # Level One
-    # =====================================
     - 
       name: "Resume"
       weight: 1

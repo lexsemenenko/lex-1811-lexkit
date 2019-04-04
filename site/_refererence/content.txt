@@ -1,0 +1,55 @@
+        {{/*
+        <div data-grid-item="width: 4, width-large: 3">
+          <ul class="t-large">
+            <li>HTML</li>
+            <li>CSS, Less, Sass</li>
+            <li>JavaScript, jQuery</li>
+            <li>WordPress, Drupal</li>
+            <li>Hugo, Go Template</li>
+            <li>PHP (CMS)</li>
+            <li>Accessibility</li>
+          </ul>
+        </div>
+        <div data-grid-item="width: 4, width-large: 3">
+          <ul class="t-large">
+            <li>Responsive Design</li>
+            <li>NPM, Gulp, Webpack</li>
+            <li>Git</li>
+            <li>Website Maintenance</li>
+            <li>Adobe Creative Suite</li>
+            <li>Browser Testing</li>
+            <li>Debugging</li>
+            <li>Developer Tools</li>
+          </ul>
+        </div> 
+        */}}
+
+            {{/* 
+    <div class="group">
+      <h3 class="h3">Skills</h3>
+      <div data-grid="columns: 12">
+        <div data-grid-item="width: 12, width-large: 3">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p>
+        </div>
+        <div data-grid-item="width: 4, width-large: 3">
+          <ul class="t-large">
+            <li>JavaScript ES6</li>
+            <li>React, Gatsby</li>
+            <li>Node.js</li>
+            <li>Redux</li>
+          </ul>
+        </div>
+        <div data-grid-item="width: 4, width-large: 3">
+          <ul class="t-large">
+            <li>Algorithms</li>
+            <li>Data Structures</li>
+          </ul>
+        </div>
+        <div data-grid-item="width: 4, width-large: 3">
+          <ul class="t-large">
+            <li>Agile/Scrum/Lean Development</li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+    */}}
