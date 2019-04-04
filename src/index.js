@@ -1,22 +1,10 @@
-/* eslint-disable func-names */
-// JS Goes here - ES6 supported
-
 import './css/main.less';
-
-// Import a module for its side effects only. This runs module globally
-// without importing any values
 import './js/core/core--events-custom';
 import { _bundle } from './js/core/core--bundles';
-
-// Import Modules
 import { collapsibles } from './js/modules/module--collapsibles';
 import { bp } from './js/modules/module--breakpoints';
-import { scrollpoints, test } from './js/modules/module--scrollpoints';
+import { scrollpoints } from './js/modules/module--scrollpoints';
 import { linkAnchors } from './js/modules/module--link-anchors';
-
-// =============================================================================
-// =============================================================================
-// =============================================================================
 
 function lexkit() {
   $(document).ready(() => {
