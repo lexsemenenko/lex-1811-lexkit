@@ -1,5 +1,5 @@
 {{ define "hero" }}
-  <div id="about" class="section section--hero scrollpoint">
+  <div id="intro" class="section section--hero scrollpoint">
     <div class="group">
       <div class="hero">
       
@@ -12,8 +12,8 @@
         <div class="hero__menu">
           <div class="scrollpoint--menu-anchor">
             <ul class="menu-scroll scrollpoints-watch--menu">
-              <li data-scrollpoint-watch="about"><a href="/#about">Intro</a></li>
-              <li data-scrollpoint-watch="skills"><a href="/#skills">Skills</a></li>
+              <li data-scrollpoint-watch="intro"><a href="/#intro">Intro</a></li>
+              <li data-scrollpoint-watch="about"><a href="/#about">About</a></li>
               <li data-scrollpoint-watch="projects"><a href="/#projects">Projects</a></li>
               <li data-scrollpoint-watch="contact"><a href="/#contact">Contact</a></li>
             </ul>
@@ -29,44 +29,40 @@
 {{ end }}
 
 {{ define "content" }}
-  <div id="skills" class="section section--lines  scrollpoint">
+  <div id="about" class="section section--lines  scrollpoint">
     <div class="group">
-      <h2 class="h2 h2__block"><span>Skills</span></h2>
+      <h2 class="h2 h2__block"><span>About</span></h2>
       <div data-grid="columns: 12">
-        <div data-grid-item="width: 12, width-large: 3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
-        </div>
-        <div data-grid-item="width: 4, width-large: 3">
+        <div data-grid-item="width: 12, width-large: 6">
+          <p class="t-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris libero tortor, pellentesque fringilla mi id, convallis varius urna. Fusce varius malesuada metus et consequat. Aenean interdum lacinia blandit.<p>
+        </div
+        {{/* <div data-grid-item="width: 4, width-large: 3">
           <ul class="t-large">
             <li>HTML</li>
             <li>CSS, Less, Sass</li>
             <li>JavaScript, jQuery</li>
             <li>WordPress, Drupal</li>
             <li>Hugo, Go Template</li>
+            <li>PHP (CMS)</li>
+            <li>Accessibility</li>
           </ul>
         </div>
         <div data-grid-item="width: 4, width-large: 3">
           <ul class="t-large">
-            <li>PHP (CMS)</li>
-            <li>Accessibility</li>
             <li>Responsive Design</li>
             <li>NPM, Gulp, Webpack</li>
             <li>Git</li>
-          </ul>
-        </div>
-        <div data-grid-item="width: 4, width-large: 3">
-          <ul class="t-large">
             <li>Website Maintenance</li>
             <li>Adobe Creative Suite</li>
             <li>Browser Testing</li>
             <li>Debugging</li>
             <li>Developer Tools</li>
           </ul>
-        </div>
+        </div> */}}
       </div>
     </div>
-    <div class="group">
-      <h3 class="h3">What I'm Learning</h3>
+    {{/* <div class="group">
+      <h3 class="h3">Skills</h3>
       <div data-grid="columns: 12">
         <div data-grid-item="width: 12, width-large: 3">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<p>
@@ -91,7 +87,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> */}}
   </div>
   <div id="projects" class="section section--lines section--muted scrollpoint">
     <div class="group">
@@ -116,7 +112,7 @@
           <div class="overlay overlay--toggle" data-collapsible="open: false">
             <img class="project__image"src="/img/placeholder--project-2.jpg">
             <div class="overlay__content" data-collapsible="open: false">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              <p>Skills Used: HTML, CSS, JavaScript, Libraries, Hugo, jQuery</p>
             </div>
             <button class="overlay__toggle" data-collapsible="open: false"><span>Open</span></button>
           </div>
