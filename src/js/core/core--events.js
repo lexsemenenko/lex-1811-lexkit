@@ -7,18 +7,25 @@
 //                  module, they can emit events and not have to worry about
 //                  which modules depend on them.  Modules can subscribe to
 //                  events and be notified when any module publishes.
+//
+// Subscriber or Listen
+// _events.on('peopleChanaged', someHandler);
+// _events.on('peopleChanaged', someOtherHandler);
+//
+// Trigger
+// _events.emit('peopleChanaged', 3)
 
 // Events PubSub Pattern
-//= =============================================================================
+// =============================================================================
 
-const _events = {
+export const _events = {
   events: {},
   // Bind an event
   on(eventName, fn) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(fn);
   },
-  // Unbind an event if needed
+  // Unbind an event
   off(eventName, fn) {
     if (this.events[eventName]) {
       for (let i = 0; i < this.events[eventName].length; i++) {
@@ -29,18 +36,12 @@ const _events = {
       }
     }
   },
-  // Create/Emit/Trigger Events
-  // Params:          eventName - event name
-  //                  data      - data to pass with your event
+  // Emit
   trigger(eventName, data) {
-    // If our events object has our events,
     if (this.events[eventName]) {
-      // Fire per array item
       this.events[eventName].forEach(function(fn) {
         fn(data);
       });
     }
-  },
+  }
 };
-
-export default _events;

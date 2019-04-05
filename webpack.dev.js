@@ -10,7 +10,7 @@ module.exports = merge(common, {
 
   output: {
     filename: '[name].js',
-    chunkFilename: '[id].css',
+    chunkFilename: '[id].css'
   },
 
   devServer: {
@@ -21,8 +21,8 @@ module.exports = merge(common, {
     quiet: false,
     open: true,
     historyApiFallback: {
-      rewrites: [{ from: /./, to: '404.html' }],
-    },
+      rewrites: [{ from: /./, to: '404.html' }]
+    }
   },
 
   plugins: [
@@ -30,13 +30,13 @@ module.exports = merge(common, {
       cleanOnceBeforeBuildPatterns: [
         'dist/**/*.js',
         'dist/**/*.css',
-        'site/content/webpack.json',
-      ],
+        'site/content/webpack.json'
+      ]
     }),
 
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
+      chunkFilename: '[id].css'
+    })
+  ]
 });

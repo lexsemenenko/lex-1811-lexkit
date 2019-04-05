@@ -3,8 +3,11 @@
     <div class="group">
       <div class="hero">
         <div class="hero__text">
-          <h1 class="h1 t-blue-dark t-bold">Front-End & Web Developer</h1>
+          <h1 class="h1 t-bold">Front-End & Web Developer</h1>
           <strong class="h2 t-normal">Lex Semenenko</strong>
+          <a class="hero__arrow" href="#about">
+            <svg width="30" height="30" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="arrow-down"><polygon points="10.5,16.08 5.63,10.66 6.37,10 10.5,14.58 14.63,10 15.37,10.66"></polygon><line fill="none" stroke="#FA6400" x1="10.5" y1="4" x2="10.5" y2="15"></line></svg>
+          </a>
         </div>
         {{/* <img class="hero__computer" src="/img/kisspng-1.png" alt=""> */}}
         <div class="hero__menu">
@@ -24,7 +27,7 @@
 {{ define "menu-anchor" }}
 {{ end }}
 {{ define "content" }}
-  <div id="about" class="section section--lines  scrollpoint">
+  <div id="about" class="section  scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>About</span></h2>
       <div data-grid="columns: 12">
@@ -34,7 +37,7 @@
       </div>
     </div>
   </div>
-  <div id="projects" class="section section--lines section--muted scrollpoint">
+  <div id="projects" class="section section--muted scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>Projects</span></h2>
       <div data-grid="columns: 12, gutters-row: true">
@@ -66,7 +69,7 @@
       </div>
     </div>
   </div>
-  <div id="contact" class="section section--lines-dark  scrollpoint">
+  <div id="contact" class="section-dark  scrollpoint">
     <div class="group">
       <h2 class="h2 h2__block"><span>Contact</span></h2>
       <div data-grid="columns: 12">

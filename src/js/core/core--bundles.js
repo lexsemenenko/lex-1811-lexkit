@@ -22,9 +22,11 @@ _bundle._customEventsAvailable = [
   'on:Resize',
   'on:ResizeEnd',
   'on:Scroll',
-  'on:ScrollDefault',
+  'on:ScrollDefault'
 ];
+
 _bundle._bundlesStorage = [];
+
 _bundle._add = function(bundleObj) {
   _bundle._bundlesStorage.push(bundleObj);
 };

@@ -3,19 +3,19 @@
 
 .header {
   transition-timing-function: ;
-  background-color: lighten(#e1f0fb, 4%);
-  border-bottom: 1px solid #e1f0fb;
+  // background-color: lighten(#e1f0fb, 4%);
+  // border-bottom: 1px solid #e1f0fb;
+  background-color: rgb(20, 20, 20);
   padding-top: 20px;
   padding-bottom: 20px;
   transition: all @header-transition-duration @header-transition-timing;
 
   &__logo {
     // margin: 0 auto;
-    width: (423px / 5px);
+    width: (423px / 5.5px);
 
-    //height: 198px / @logo-size-multiplier;
     svg path {
-      fill: @color-blue;
+      fill: rgba(255, 255, 255, 0.15);
     }
 
     transition: all @header-transition-duration @header-transition-timing;
@@ -35,7 +35,7 @@
   &.active {
     padding-top: 10px;
     padding-bottom: 10px;
-    background: white;
+    background-color: rgb(30, 30, 30);
     transition: all @header-transition-duration @header-transition-timing;
 
     .menu-main {

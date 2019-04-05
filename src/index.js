@@ -5,6 +5,7 @@ import { collapsibles } from './js/modules/module--collapsibles';
 import { bp } from './js/modules/module--breakpoints';
 import { scrollpoints } from './js/modules/module--scrollpoints';
 import { linkAnchors } from './js/modules/module--link-anchors';
+import './js/playground';
 
 function lexkit() {
   $(document).ready(() => {
